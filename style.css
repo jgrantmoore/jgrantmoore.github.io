@@ -100,7 +100,7 @@ p {
     border-radius: 3px;
     font-family: Audiowide;
     text-decoration: none;
-    color: white;
+    color: whitesmoke;
     transition: ease .3s;
 }
 #ablinks a:hover {
