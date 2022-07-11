@@ -25,7 +25,6 @@ p {
     position: fixed;
     left: 0px;
     top: 0px;
-    background-color: #1a090d;
     background-color: var(--dblue);
     width: 100%;
 }
@@ -46,9 +45,11 @@ p {
 #startingdiv {
     min-height: 600px;
     max-height: 800px;
-    background-color: var(--white);
+    background-color: var(--orange);
     margin: -50px -8px;
     top: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 .slider {
@@ -110,7 +111,7 @@ p {
     margin-top: 13px;
 }
 #ablinks a:hover {
-    border: 2px solid var(--orange);
+    border-bottom: 2px solid var(--orange);
 }
 .Name {
     display: inline-block;
@@ -121,8 +122,7 @@ p {
 }
 #meface {
     border-radius: 50%;
-    position:absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
+    display: inline-block;
     margin: auto;
     height: 200px;
 }
