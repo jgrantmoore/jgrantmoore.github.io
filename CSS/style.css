@@ -45,7 +45,7 @@ p {
 #startingdiv {
     min-height: 600px;
     max-height: 800px;
-    background-color: var(--orange);
+    background-color: rgb(215, 215, 215);
     margin: -50px -8px;
     top: 50%;
     display: flex;
