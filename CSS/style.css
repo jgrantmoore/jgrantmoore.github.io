@@ -83,6 +83,9 @@ p {
 .Name {
     float: left;
 }
+.quote {
+    color: var(--orange)
+}
 #meface {
     border-radius: 50%;
     margin: auto;
