@@ -130,3 +130,13 @@ a {
     color: var(--white);
     text-decoration: none;
 }
+#projectstable {
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.projectsimg {
+    height: 15%;
+    width: 15%;
+}
