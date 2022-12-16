@@ -6,24 +6,56 @@
     <link href='https://fonts.googleapis.com/css?family=Kelly Slab' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <script src="Scripts/script.js"></script>
 </head>
 <body>
-    <div class="topbar">
+    <div class="topbar" onmouseleave="mouseLeaves()">
         <header class="Name"><a href="index.html">Grant Moore</a></header>
         <div id="ablinks">
-            <a href="social-media.html">Social Media</a>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="https://www.linkedin.com/in/james-grant-moore" target="_blank">LinkedIn</a><br>
+                <a href="https://www.instagram.com/jgmoore3.5/" target="_blank">Instagram</a><br>
+            </div>
+            
+            <a onclick="myFunction()">Social Media▾</a>
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="blog.html">Blog</a>
         </div>
     </div>
     <br><br><br>
-    <table id="projectstable">
-        <tr>
-            <td><a href="https://github.com/jgrantmoore/jgrantmoore.github.io" target="_blank"><img class="projectsimg"src="Photos/ProjectImg/Portfolio.png"><br>Portfolio Website</a></td>
-            <td>Project 2</td>
-            <td>Project 3</td>
-        </tr>
-    </table>
-<p>hello projects</p>
+    <!-- HTML for the projects page -->
+<h1 id="projectHeader">Projects</h1>
+
+<!-- Container for the projects -->
+<div class="projects-container">
+  <!-- Project 1 -->
+  <div class="project">
+    <h2>Project 1</h2>
+    <img src="Photos/ProjectImg/Portfolio.png" alt="Screenshot of Project 1">
+    <p>Brief description of Project 1</p>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project">
+    <h2>Project 2</h2>
+    <img src="Photos/ProjectImg/Portfolio.png" alt="Screenshot of Project 2">
+    <p>Brief description of Project 2</p>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project">
+    <h2>Project 3</h2>
+    <img src="Photos/ProjectImg/Portfolio.png" alt="Screenshot of Project 3">
+    <p>Brief description of Project 3</p>
+  </div>
+
+  <!-- Project 4 -->
+  <div class="project">
+    <h2>Project 4</h2>
+    <img src="Photos/ProjectImg/Portfolio.png" alt="Screenshot of Project 4">
+    <p>Brief description of Project 4</p>
+  </div>
+</div>
+
 </body>

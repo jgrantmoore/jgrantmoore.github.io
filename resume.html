@@ -6,12 +6,18 @@
     <link href='https://fonts.googleapis.com/css?family=Kelly Slab' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <script src="Scripts/script.js"></script>
 </head>
 <body>
-    <div class="topbar">
+    <div class="topbar" onmouseleave="mouseLeaves()">
         <header class="Name"><a href="index.html">Grant Moore</a></header>
         <div id="ablinks">
-            <a href="social-media.html">Social Media</a>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="https://www.linkedin.com/in/james-grant-moore" target="_blank">LinkedIn</a><br>
+                <a href="https://www.instagram.com/jgmoore3.5/" target="_blank">Instagram</a><br>
+            </div>
+            
+            <a onclick="myFunction()">Social Media▾</a>
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="blog.html">Blog</a>
