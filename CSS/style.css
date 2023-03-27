@@ -159,6 +159,7 @@ a {
   
 .project {
     width: 20%;
+    height: 20%;
     margin-bottom: 2rem;
     margin-left: 10px;
     margin-right: 10px;
@@ -187,6 +188,8 @@ a {
     color: black;
     display: flex;
     justify-content: center;
+    font-size: 190%;
+    transition: font-size .5s;
 }
 
 .project p {
@@ -195,13 +198,14 @@ a {
     justify-content: center;
 }
 
-.project a {
-    display: flex;
+.projects-container a {
+    display: contents;
     justify-content: center;
 }
 
 .project:hover {
     width: 22%;
+    font-size: 105%;
 }
 
 .dropdown-content {
