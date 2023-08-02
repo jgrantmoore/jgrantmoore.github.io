@@ -13,7 +13,7 @@ export class Home extends Component{
                     <img id="meface" src={Headshot} />
                 </div>
                 <div id="technologies-div">
-                    <h2>Technologies:</h2>
+                    <h2>Technologies</h2>
                 </div>
                 <div id="aboutmediv">
                     <center>
