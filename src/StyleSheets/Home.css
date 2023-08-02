@@ -45,14 +45,6 @@ p {
     font-size: 20px;
 }
 
-.topbar {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 100%;
-}
-
 #aboutmediv {
     margin: 100px;
     text-align: center;
