@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.50112af7.css",
-    "main.js": "/static/js/main.6c081d9b.js",
+    "main.css": "/static/css/main.bf4037e6.css",
+    "main.js": "/static/js/main.288783bb.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/React.png": "/static/media/React.f153eb9f28437192c6a0.png",
     "static/media/java.png": "/static/media/java.35397b59170cfd616fee.png",
     "static/media/2023AugustStart.pdf": "/static/media/2023AugustStart.3fc465c2aada8515f429.pdf",
     "static/media/headshot.png": "/static/media/headshot.24b86a603ff0a9660928.png",
     "static/media/htmlcssjs.png": "/static/media/htmlcssjs.aab59987a376edab2034.png",
-    "static/media/restfulapi.svg": "/static/media/restfulapi.64ec3ad971000830e7d9372dbeb59103.svg",
+    "static/media/restfulapi.png": "/static/media/restfulapi.5b47995ee1f6cc08518d.png",
     "index.html": "/index.html",
-    "static/media/signalr.svg": "/static/media/signalr.5554e16a2aa109a63d45c963c7d155ec.svg",
     "static/media/GrantMoore.vcf": "/static/media/GrantMoore.36590e3a7997ddbfd26d.vcf",
-    "main.50112af7.css.map": "/static/css/main.50112af7.css.map",
-    "main.6c081d9b.js.map": "/static/js/main.6c081d9b.js.map",
+    "main.bf4037e6.css.map": "/static/css/main.bf4037e6.css.map",
+    "main.288783bb.js.map": "/static/js/main.288783bb.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.50112af7.css",
-    "static/js/main.6c081d9b.js"
+    "static/css/main.bf4037e6.css",
+    "static/js/main.288783bb.js"
   ]
 }
