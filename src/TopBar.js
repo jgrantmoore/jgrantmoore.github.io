@@ -35,7 +35,7 @@ export class TopBar extends Component{
                             <a href="https://www.instagram.com/jgmoore3.5/" target="_blank">Instagram</a><br />
                         </div>
                         <a onClick={this.myFunction}>Social Media▾</a>
-                        <NavLink tag={Link} to="/testpage">Resume</NavLink>
+                        <NavLink tag={Link} to="/resume">Resume</NavLink>
                         <NavLink tag={Link} to="/testpage">Projects</NavLink>
                     </div>
                 </div>

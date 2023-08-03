@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Home } from './Home';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import { Layout } from './Layout';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
+    <HashRouter>
         <div>
             <React.StrictMode>
                 <Layout>
@@ -24,7 +24,7 @@ root.render(
                 </Layout>
             </React.StrictMode>
         </div>
-    </BrowserRouter>
+    </HashRouter>
     
 );
 

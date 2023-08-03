@@ -1,5 +1,7 @@
 import App from "./App";
+import { ContactInfo } from "./ContactInfo";
 import { Home } from "./Home";
+import { Resume } from "./Resume";
 
 
 const AppRoutes = [
@@ -10,6 +12,14 @@ const AppRoutes = [
     {
         path: '/testpage',
         element: <App />
+    },
+    {
+        path: '/resume',
+        element: <Resume />
+    },
+    {
+        path: '/contactinfo',
+        element: <ContactInfo />
     },
 ];
 
