@@ -2,6 +2,7 @@ import App from "./App";
 import { ContactInfo } from "./ContactInfo";
 import { Home } from "./Home";
 import { Resume } from "./Resume";
+import { Projects } from "./Projects";
 
 
 const AppRoutes = [
@@ -20,6 +21,10 @@ const AppRoutes = [
     {
         path: '/contactinfo',
         element: <ContactInfo />
+    },
+    {
+        path: '/projects',
+        element: <Projects />
     },
 ];
 

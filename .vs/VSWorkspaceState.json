@@ -4,8 +4,9 @@
     "\\src",
     "\\src\\Files",
     "\\src\\Photos",
+    "\\src\\Photos\\Projects",
     "\\src\\StyleSheets"
   ],
-  "SelectedNode": "\\src\\Photos\\signalr.png",
+  "SelectedNode": "\\src\\StyleSheets\\Home.css",
   "PreviewInSolutionExplorer": false
 }
