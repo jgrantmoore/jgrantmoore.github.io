@@ -36,7 +36,7 @@ export class TopBar extends Component{
                         </div>
                         <a onClick={this.myFunction}>Social Media▾</a>
                         <NavLink tag={Link} to="/resume">Resume</NavLink>
-                        <NavLink tag={Link} to="/testpage">Projects</NavLink>
+                        <NavLink tag={Link} to="/projects">Projects</NavLink>
                     </div>
                 </div>
             </div>
