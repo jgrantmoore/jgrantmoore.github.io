@@ -105,19 +105,22 @@ export class Home extends Component{
                 <div id="expdiv">
                     <table id="exptable" class="whitetext">
                         <tr>
+                            <th>R&D Intern<hr /></th>
                             <th>IT Intern<hr /></th>
                             <th>Technology Intern<hr /></th>
                             <th>IT Intern<hr /></th>
                         </tr>
                         <tr id="employers">
-                            <td>Whitfield County Schools</td>
-                            <td>Heritage High School</td>
                             <td><a href="cardmonroe.com" target="_blank">Card-Monroe Corp.</a></td>
+                            <td><a href="cardmonroe.com" target="_blank">Card-Monroe Corp.</a></td>
+                            <td>Heritage High School</td>
+                            <td>Whitfield County Schools</td>
                         </tr>
                         <tr>
-                            <td>Repaired over 1000 chromebooks with a team of fellow interns</td>
-                            <td>Performed a variety of IT tasks such as Active Directory management, Google Admin management, device repair and deployment, troubleshooting, and much more.</td>
+                            <td>Performed full-stack development on a new HMI (Human-Machine Interface) Web App based on a React front-end and a C# back-end. Additionally, assisted in PLC Engineering and deployment.</td>
                             <td>Helped with a wide range of help-desk tasks, Active Directory management, and other various hardware tasks.</td>
+                            <td>Performed a variety of IT tasks such as Active Directory management, Google Admin management, device repair and deployment, troubleshooting, and much more.</td>
+                            <td>Repaired over 1000 chromebooks with a team of fellow interns</td>
                         </tr>
                     </table>
                 </div>
