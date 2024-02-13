@@ -122,10 +122,12 @@ p {
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 #exptable {
-    width: 600px;
+    width: 85vw;
     border-spacing: 20px 5px;
 }
 
