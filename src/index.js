@@ -11,6 +11,7 @@ import { Layout } from './Layout';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <HashRouter>
+        <title>Grant Moore</title>
         <div>
             <React.StrictMode>
                 <Layout>
