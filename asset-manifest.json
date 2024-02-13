@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.05151635.css",
-    "main.js": "/static/js/main.995129e1.js",
-    "static/js/592.6d7de513.chunk.js": "/static/js/592.6d7de513.chunk.js",
+    "main.css": "/static/css/main.352fd7a8.css",
+    "main.js": "/static/js/main.361c9c09.js",
     "static/media/gallery.png": "/static/media/gallery.dcf445d4c6de0d4d2761.png",
     "static/media/portfolio.png": "/static/media/portfolio.b254860910880a4be69b.png",
     "static/media/wordcloud.png": "/static/media/wordcloud.49ff3974b413a2b18e64.png",
     "static/media/React.png": "/static/media/React.f153eb9f28437192c6a0.png",
     "static/media/java.png": "/static/media/java.35397b59170cfd616fee.png",
-    "static/media/2023AugustStart.pdf": "/static/media/2023AugustStart.3fc465c2aada8515f429.pdf",
+    "static/media/2024MidFeb.pdf": "/static/media/2024MidFeb.cfe7786e002f5556d503.pdf",
     "static/media/headshot.png": "/static/media/headshot.24b86a603ff0a9660928.png",
     "static/media/htmlcssjs.png": "/static/media/htmlcssjs.aab59987a376edab2034.png",
+    "static/media/goodgreek.jpg": "/static/media/goodgreek.801fd1d7d5052ac7f92e.jpg",
+    "static/media/goodgreekregister.jpg": "/static/media/goodgreekregister.4912353c858e4c96a729.jpg",
     "static/media/restfulapi.png": "/static/media/restfulapi.5b47995ee1f6cc08518d.png",
     "index.html": "/index.html",
     "static/media/GrantMoore.vcf": "/static/media/GrantMoore.36590e3a7997ddbfd26d.vcf",
-    "main.05151635.css.map": "/static/css/main.05151635.css.map",
-    "main.995129e1.js.map": "/static/js/main.995129e1.js.map",
-    "592.6d7de513.chunk.js.map": "/static/js/592.6d7de513.chunk.js.map"
+    "main.352fd7a8.css.map": "/static/css/main.352fd7a8.css.map",
+    "main.361c9c09.js.map": "/static/js/main.361c9c09.js.map"
   },
   "entrypoints": [
-    "static/css/main.05151635.css",
-    "static/js/main.995129e1.js"
+    "static/css/main.352fd7a8.css",
+    "static/js/main.361c9c09.js"
   ]
 }
