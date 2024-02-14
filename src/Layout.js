@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import { TopBar } from './TopBar';
+import { TopBar } from './Components/TopBar';
 
 export class Layout extends Component {
   static displayName = Layout.name;

@@ -1,11 +1,11 @@
 ﻿import { Component } from 'react';
-import './StyleSheets/Projects.css';
-import portfolio from './Photos/Projects/portfolio.png';
-import gallery from './Photos/Projects/gallery.png';
-import wordcloud from './Photos/Projects/wordcloud.png';
-import goodgreek from './Photos/Projects/goodgreek.jpg';
-import goodgreekregister from './Photos/Projects/goodgreekregister.jpg'
-import Project from './Components/Project';
+import '../StyleSheets/Projects.css';
+import portfolio from '../Photos/Projects/portfolio.png';
+import gallery from '../Photos/Projects/gallery.png';
+import wordcloud from '../Photos/Projects/wordcloud.png';
+import goodgreek from '../Photos/Projects/goodgreek.jpg';
+import goodgreekregister from '../Photos/Projects/goodgreekregister.jpg'
+import Project from '../Components/Project';
 
 export class Projects extends Component{
 

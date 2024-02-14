@@ -1,6 +1,6 @@
 ﻿import { Component } from 'react';
-import './StyleSheets/ContactInfo.css';
-import Contact from './Files/GrantMoore.vcf';
+import '../StyleSheets/ContactInfo.css';
+import Contact from '../Files/GrantMoore.vcf';
 
 export class ContactInfo extends Component{
 

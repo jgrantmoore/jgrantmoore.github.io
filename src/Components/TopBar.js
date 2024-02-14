@@ -1,7 +1,7 @@
 ﻿import { Component } from 'react';
 import { NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import './StyleSheets/TopBar.css';
+import '../StyleSheets/TopBar.css';
 
 
 export class TopBar extends Component{

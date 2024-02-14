@@ -1,12 +1,12 @@
 ﻿import { Component } from 'react';
-import './StyleSheets/Home.css'
-import Headshot from './Photos/headshot.png';
-import htmlcssjs from './Photos/htmlcssjs.png';
-import java from './Photos/java.png';
-import react from './Photos/React.png';
-import signalr from './Photos/signalr.png';
-import restfulapi from './Photos/restfulapi.png';
-import csharp from './Photos/csharp.png';
+import '../StyleSheets/Home.css'
+import Headshot from '../Photos/headshot.png';
+import htmlcssjs from '../Photos/htmlcssjs.png';
+import java from '../Photos/java.png';
+import react from '../Photos/React.png';
+import signalr from '../Photos/signalr.png';
+import restfulapi from '../Photos/restfulapi.png';
+import csharp from '../Photos/csharp.png';
 
 async function startPacman() {
     var dot1 = document.getElementById('dot1');

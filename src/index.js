@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './StyleSheets/index.css';
 import App from './App';
-import { Home } from './Home';
+import { Home } from './Pages/Home';
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import { Layout } from './Layout';

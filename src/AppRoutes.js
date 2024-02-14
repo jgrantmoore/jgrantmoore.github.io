@@ -1,8 +1,8 @@
 import App from "./App";
-import { ContactInfo } from "./ContactInfo";
-import { Home } from "./Home";
-import { Resume } from "./Resume";
-import { Projects } from "./Projects";
+import { ContactInfo } from "./Pages/ContactInfo";
+import { Home } from "./Pages/Home";
+import { Resume } from "./Pages/Resume";
+import { Projects } from "./Pages/Projects";
 
 
 const AppRoutes = [

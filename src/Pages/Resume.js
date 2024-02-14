@@ -1,6 +1,6 @@
 ﻿import { Component } from 'react';
-import './StyleSheets/Resume.css';
-import resume from './Files/2024MidFeb.pdf'
+import '../StyleSheets/Resume.css';
+import resume from '../Files/2024MidFeb.pdf'
 
 export class Resume extends Component{
 
