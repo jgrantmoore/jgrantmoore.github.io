@@ -1,25 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.352fd7a8.css",
-    "main.js": "/static/js/main.cb950002.js",
+    "main.css": "/static/css/main.c322d8fc.css",
+    "main.js": "/static/js/main.6890cd5a.js",
     "static/media/gallery.png": "/static/media/gallery.dcf445d4c6de0d4d2761.png",
     "static/media/portfolio.png": "/static/media/portfolio.b254860910880a4be69b.png",
+    "static/media/Python.png": "/static/media/Python.4f5f52c67194dc46e313.png",
     "static/media/wordcloud.png": "/static/media/wordcloud.49ff3974b413a2b18e64.png",
     "static/media/React.png": "/static/media/React.f153eb9f28437192c6a0.png",
-    "static/media/java.png": "/static/media/java.35397b59170cfd616fee.png",
-    "static/media/2024MidFeb.pdf": "/static/media/2024MidFeb.cfe7786e002f5556d503.pdf",
+    "static/media/Java.png": "/static/media/Java.35397b59170cfd616fee.png",
+    "static/media/GrantMooreResume.pdf": "/static/media/GrantMooreResume.1080d05a6fd9b9749264.pdf",
+    "static/media/C-Sharp.png": "/static/media/C-Sharp.766c48210078f0dd2fa1.png",
+    "static/media/Codesys.png": "/static/media/Codesys.4309b82d7cbbca49a1d6.png",
+    "static/media/HTML-CSS-JS.png": "/static/media/HTML-CSS-JS.93f4622b01e303099978.png",
     "static/media/headshot.png": "/static/media/headshot.24b86a603ff0a9660928.png",
-    "static/media/htmlcssjs.png": "/static/media/htmlcssjs.aab59987a376edab2034.png",
     "static/media/goodgreek.jpg": "/static/media/goodgreek.801fd1d7d5052ac7f92e.jpg",
     "static/media/goodgreekregister.jpg": "/static/media/goodgreekregister.4912353c858e4c96a729.jpg",
-    "static/media/restfulapi.png": "/static/media/restfulapi.5b47995ee1f6cc08518d.png",
+    "static/media/Restful-APIs.png": "/static/media/Restful-APIs.5b47995ee1f6cc08518d.png",
+    "static/media/Go.png": "/static/media/Go.c5deac823e6970e6cca5.png",
     "index.html": "/index.html",
     "static/media/GrantMoore.vcf": "/static/media/GrantMoore.36590e3a7997ddbfd26d.vcf",
-    "main.352fd7a8.css.map": "/static/css/main.352fd7a8.css.map",
-    "main.cb950002.js.map": "/static/js/main.cb950002.js.map"
+    "main.c322d8fc.css.map": "/static/css/main.c322d8fc.css.map",
+    "main.6890cd5a.js.map": "/static/js/main.6890cd5a.js.map"
   },
   "entrypoints": [
-    "static/css/main.352fd7a8.css",
-    "static/js/main.cb950002.js"
+    "static/css/main.c322d8fc.css",
+    "static/js/main.6890cd5a.js"
   ]
 }
