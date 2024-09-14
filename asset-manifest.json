@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c322d8fc.css",
-    "main.js": "/static/js/main.6890cd5a.js",
+    "main.css": "/static/css/main.1be501a4.css",
+    "main.js": "/static/js/main.9067e79e.js",
     "static/media/gallery.png": "/static/media/gallery.dcf445d4c6de0d4d2761.png",
     "static/media/portfolio.png": "/static/media/portfolio.b254860910880a4be69b.png",
     "static/media/Python.png": "/static/media/Python.4f5f52c67194dc46e313.png",
@@ -19,11 +19,11 @@
     "static/media/Go.png": "/static/media/Go.c5deac823e6970e6cca5.png",
     "index.html": "/index.html",
     "static/media/GrantMoore.vcf": "/static/media/GrantMoore.36590e3a7997ddbfd26d.vcf",
-    "main.c322d8fc.css.map": "/static/css/main.c322d8fc.css.map",
-    "main.6890cd5a.js.map": "/static/js/main.6890cd5a.js.map"
+    "main.1be501a4.css.map": "/static/css/main.1be501a4.css.map",
+    "main.9067e79e.js.map": "/static/js/main.9067e79e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c322d8fc.css",
-    "static/js/main.6890cd5a.js"
+    "static/css/main.1be501a4.css",
+    "static/js/main.9067e79e.js"
   ]
 }
