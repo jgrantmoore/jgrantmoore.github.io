@@ -7,7 +7,6 @@ import '../StyleSheets/TopBar.css';
 export class TopBar extends Component{
 
     myFunction = () => {
-        console.log('test');
         document.getElementById("myDropdown").classList.toggle("show");
     };
 

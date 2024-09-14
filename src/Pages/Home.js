@@ -1,12 +1,8 @@
 ﻿import { Component } from 'react';
 import '../StyleSheets/Home.css'
 import Headshot from '../Photos/headshot.png';
-import htmlcssjs from '../Photos/htmlcssjs.png';
-import java from '../Photos/java.png';
-import react from '../Photos/React.png';
-import signalr from '../Photos/signalr.png';
-import restfulapi from '../Photos/restfulapi.png';
-import csharp from '../Photos/csharp.png';
+import { Technologies } from '../Components/Technologies';
+import { Jobs } from '../Components/Jobs';
 
 async function startPacman() {
 
@@ -97,42 +93,12 @@ export class Home extends Component{
                 </div>
                 <div id="aboutmediv">
                     <h2>Hello!</h2>
-                    <p class="whitetext">Welcome to my portfolio! My name is Grant Moore and I’m a second-year Computer Science student at The University of Georgia. I’m passionate about software engineering and love to learn new technologies. Please explore my projects and experiences, and don’t be afraid to reach out!</p>
+                    <p class="whitetext">Welcome to my portfolio! My name is Grant Moore and I’m a third-year Computer Science student at The University of Georgia. I’m passionate about software engineering and love to learn new technologies. Please explore my projects and experiences, and don’t be afraid to reach out!</p>
                 </div>
-                <h2 id="tech-title">Technologies</h2>
-                <div id="technologies-div">
-                    <img src={signalr} className="tech-img" />
-                    <img src={htmlcssjs} className="tech-img" />
-                    <img src={java} className="tech-img" />
-                    <img src={react} className="tech-img" />
-                    <img src={csharp} className="tech-img" />
-                    <img src={restfulapi} className="tech-img" />
-                </div>
-                <center>
-                    <h2 id="exptitle" class="kellyslab">My Work Experience</h2>
-                </center>
-                <div id="expdiv">
-                    <table id="exptable" class="whitetext">
-                        <tr>
-                            <th>R&D Intern<hr /></th>
-                            <th>IT Intern<hr /></th>
-                            <th>Technology Intern<hr /></th>
-                            <th>IT Intern<hr /></th>
-                        </tr>
-                        <tr id="employers">
-                            <td><a href="cardmonroe.com" target="_blank">Card-Monroe Corp.</a></td>
-                            <td><a href="cardmonroe.com" target="_blank">Card-Monroe Corp.</a></td>
-                            <td>Heritage High School</td>
-                            <td>Whitfield County Schools</td>
-                        </tr>
-                        <tr>
-                            <td>Performed full-stack development on a new HMI (Human-Machine Interface) Web App based on a React front-end and a C# back-end. Additionally, assisted in PLC Engineering and deployment.</td>
-                            <td>Helped with a wide range of help-desk tasks, Active Directory management, and other various hardware tasks.</td>
-                            <td>Performed a variety of IT tasks such as Active Directory management, Google Admin management, device repair and deployment, troubleshooting, and much more.</td>
-                            <td>Repaired over 1000 chromebooks with a team of fellow interns</td>
-                        </tr>
-                    </table>
-                </div>
+                <Technologies />
+                
+
+                <Jobs />
             </div>
         );
 

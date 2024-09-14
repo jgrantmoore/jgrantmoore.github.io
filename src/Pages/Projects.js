@@ -31,7 +31,7 @@ export class Projects extends Component{
                         url="https://github.com/jgrantmoore/iTunes-Gallery" 
                     />
                     <Project 
-                        title="Wordcloud Webscraper" 
+                        title="Webscrape Wordcloud" 
                         image={wordcloud} 
                         alt="Screenshot of Wordcloud Webscraper Project"
                         description="API's scrape the given URL and forms a word cloud of the most common words in the first 200 words." 
@@ -46,6 +46,7 @@ export class Projects extends Component{
                         description="GoodGreek is a platform for sharing and exploring philanthropy opportunities run by greek-life orgs." 
                         url="https://devpost.com/software/goodgreek"
                     />
+                    
                 </div>
             </div>
         );

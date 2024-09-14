@@ -25,6 +25,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: 2vh auto;
 }
 
 .project {
@@ -41,15 +42,10 @@ p {
     font-size: 2vw;
 }
 
-    .project img {
-        width: 100%;
-        height: auto;
-    }
-
-    .project p {
-        margin-top: 1rem;
-        font-size: 50%;
-    }
+.project img {
+    width: 100%;
+    height: auto;
+}
 
 #projectHeader {
     display: flex;
@@ -60,14 +56,17 @@ p {
     color: black;
     display: flex;
     justify-content: center;
-    font-size: inherit;
+    font-size: 100%;
 
 }
 
 .project p {
+    margin-top: 1rem;
+    font-size: 50%;
     color: black;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .projects-container a {

@@ -1,0 +1,47 @@
+td {
+    color: inherit;
+    font-family: 'Sanchez';
+    font-size: 18px;
+    vertical-align: top;
+}
+
+th {
+    color: inherit;
+    font-family: 'Kelly Slab';
+    font-size: 25px;
+    vertical-align: top;
+}
+
+#employers td a {
+    text-decoration: none;
+    color: var(--white);
+    border: 2px solid transparent;
+    border-radius: 3px;
+    transition: ease .3s;
+}
+
+    #employers td a:hover {
+        border-bottom: 2px solid var(--orange);
+    }
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+#expdiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+#exptable {
+    width: 85vw;
+    border-spacing: 20px 5px;
+}
+
+#exptitle {
+    font-family: 'Audiowide';
+}

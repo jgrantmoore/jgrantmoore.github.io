@@ -118,72 +118,14 @@ p {
     height: 250px;
 }
 
-#expdiv {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-}
 
-#exptable {
-    width: 85vw;
-    border-spacing: 20px 5px;
-}
 
 .kellyslab {
     font-family: 'Kelly Slab', Arial, Helvetica, sans-serif;
     color: var(--white);
 }
 
-td {
-    color: inherit;
-    font-family: 'Sanchez';
-    font-size: 18px;
-    vertical-align: top;
-}
 
-th {
-    color: inherit;
-    font-family: 'Kelly Slab';
-    font-size: 25px;
-    vertical-align: top;
-}
-
-#employers td a {
-    text-decoration: none;
-    color: var(--white);
-    border: 2px solid transparent;
-    border-radius: 3px;
-    transition: ease .3s;
-}
-
-    #employers td a:hover {
-        border-bottom: 2px solid var(--orange);
-    }
-
-a {
-    color: var(--white);
-    text-decoration: none;
-}
-
-#technologies-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#tech-title {
-    text-align: center;
-}
-
-.tech-img {
-    max-width: 20vw;
-    min-width: 12vw;
-    max-height: 15vh;
-    object-fit: contain;
-}
 
 .pacman {
     margin: 40px 10px;
