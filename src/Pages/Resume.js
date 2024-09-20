@@ -8,7 +8,7 @@ export class Resume extends Component{
 
         return (
             <div id="resume-div">
-                <h1>My Resume</h1>
+                <h1 id="resumeheader">My Resume</h1>
                 <a id="download-button" href={ resume } download="GrantMooreResume.pdf">Download as PDF</a>
                 <iframe src={resume} id="resume-pdf"></iframe>
                 

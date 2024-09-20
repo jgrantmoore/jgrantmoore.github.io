@@ -25,8 +25,6 @@ async function startPacman() {
         dot5.style.transition = '2.6s linear';
     
     
-        //pacman.style.right = '150vw';
-    
         dot1.style.right = '8vw';
         dot2.style.right = '25vw';
         dot3.style.right = '75vw';
@@ -46,11 +44,7 @@ async function startPacman() {
     
             setTimeout(() => {
                 meface.style.opacity = '0';
-                
-                setTimeout(() => {
-                    meface.style.transition = '2s';
-                    meface.style.opacity = '1';
-                }, "3000");
+                meface.style.height = "125px";
             }, "1800")
     
             setTimeout(() => {
@@ -60,17 +54,53 @@ async function startPacman() {
             setTimeout(() => {
                 dot4.style.display = 'none';
             }, "2850")
+
+            setTimeout(() => {
+                dot5.style.display = 'none';
+            }, "3000")
     
         }, "2000");
     
         setTimeout(() => {
-            abmediv.scrollIntoView({ behavior: 'smooth' });
+            //abmediv.scrollIntoView({ behavior: 'smooth' });
+            const startingdiv = document.getElementById("startingdiv");
+            const lastnameheading = document.createElement("h1");
+            const titlediv = document.getElementById("titlediv");
+            lastnameheading.innerHTML = "Moore";
+            lastnameheading.id = "lastname";
+            lastnameheading.style.opacity = "0";
+            lastnameheading.style.visibility = "hidden";
+
+            const firstnameheading = document.createElement("h1");
+            firstnameheading.innerHTML = "Grant";
+            firstnameheading.id = "firstname";
+            firstnameheading.style.opacity = "0";
+            firstnameheading.style.visibility = "hidden";
+
+            titlediv.insertBefore(firstnameheading, titlediv.firstChild);
+            titlediv.appendChild(lastnameheading);
+            
+
+            startingdiv.style.transition = '1s ease-in-out';
+            firstnameheading.style.transition = '.5s ease-in-out';
+            lastnameheading.style.transition = '.5s ease-in-out';
+            meface.style.transition = '.5s';
+            
+
+            setTimeout(() => {
+            firstnameheading.style.opacity = "1";
+            firstnameheading.style.visibility = "visible";
+            lastnameheading.style.opacity = "1";
+            lastnameheading.style.visibility = "visible";
+            startingdiv.style.height = "500px";
+            startingdiv.style.paddingTop = "5vh";
+            meface.style.opacity = '1';
+            }, "100");
+
         }, "5000");
     } else {
         document.getElementById("pacman-div").style.display = "none";
     }
-
-    
 
 }
 
@@ -78,13 +108,14 @@ async function startPacman() {
 export class Home extends Component{
 
 
-
     render() {
 
         return (
             <div id="body">
                 <div id="startingdiv" onLoad={startPacman}>
-                    <img id="meface" src={Headshot} />
+                    <div id="titlediv">
+                        <img id="meface" src={Headshot} />
+                    </div>
                     <div id="pacman-div" className="pacman">
                         <div className="pacman-top"></div>
                         <div className="pacman-bottom"></div>
@@ -92,11 +123,10 @@ export class Home extends Component{
                     <span className="dot" id="dot1" /> <span className="dot" id="dot2" /> <span className="dot" id="dot3" /> <span className="dot" id="dot4" /> <span className="dot" id="dot5" />
                 </div>
                 <div id="aboutmediv">
-                    <h2>Hello!</h2>
+                    <h1>Hello!</h1>
                     <p class="whitetext">Welcome to my portfolio! My name is Grant Moore and I’m a third-year Computer Science student at The University of Georgia. I’m passionate about software engineering and love to learn new technologies. Please explore my projects and experiences, and don’t be afraid to reach out!</p>
                 </div>
                 <Technologies />
-                
 
                 <Jobs />
             </div>

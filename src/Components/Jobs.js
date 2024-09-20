@@ -8,7 +8,7 @@ export class Jobs extends Component {
         jobs: [
             ["R&D Software Engineering Intern",
             "Card-Monroe Corp.",
-            "Returned to Card-Monroe to continue development on the HMI Web App.",
+            "Returned to Card-Monroe to continue development on the HMI Web App. Worked with users to develop intuitive UI/UX, and created a functional prototype for the project.",
             "https://cardmonroe.com"
             ],
             ["R&D Software Engineering Intern", 
@@ -22,53 +22,38 @@ export class Jobs extends Component {
             ["Technology Intern",
             "Heritage High School",
             "Performed a variety of IT tasks such as Active Directory management, Google Admin management, device repair and deployment, troubleshooting, and much more.",
+            "https://hhs.catoosa.k12.ga.us/",
             ],
             ["IT Intern",
             "Whitfield County Schools",
             "Repaired over 1000 chromebooks with a team of fellow interns",
+            "https://www.wcsga.net/",
             ]
         ]
     };
 
     render() {
         return (
-            <div>
-                <center>
-                    <h1 id="exptitle" class="kellyslab">My Work Experience</h1>
-                </center>
+            <div id="jobsdiv">
+                <h1 id="exptitle" className="kellyslab">My Work Experience</h1>
 
                 <div id="expdiv">
-                
-                <table id="exptable" class="whitetext">
-                    <tr>
-                        {/* Render the images from state */}
-                        {this.state.jobs.map((job, index) => (
-                            <th key={index}>{job[0]}<hr /></th>
-                        ))}
-                    </tr>
-                    <tr id="employers">
-                        {/* Render the images from state */}
-                        {this.state.jobs.map((job, index) => (
-                            
-                            <td key={index}>
-                                {job[3] != null ? (
-                                <a href={job[3]} target="_blank" rel="noopener noreferrer">
-                                    {job[1]}
-                                </a>
-                                ) : (
-                                job[1]
-                                )}
-                            </td>
-                        ))}
-                    </tr>
-                    <tr>
-                        {/* Render the images from state */}
-                        {this.state.jobs.map((job, index) => (
-                            <td key={index} >{job[2]}</td>
-                        ))}
-                    </tr>
-                </table>
-            </div>
+                    {this.state.jobs.map((job, index) => (
+                        <div className="jobsjobcontainer" key={index}>
+                            <h3 className="jobsjobtitle">{job[0]}</h3>
+                            <a 
+                            className="jobsjobcompany" 
+                            href={job[3] !== null ? job[3] : "#"} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            >
+                            {job[1]}
+                            </a>
+                            <hr style={{width: "80%"}}/>
+                            <p className="jobsjobdesc">{job[2]}</p>
+                        </div>
+                    ))}
+                </div> {/* expdiv */}
             </div>
             
         );
