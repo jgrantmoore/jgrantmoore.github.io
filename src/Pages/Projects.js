@@ -5,6 +5,8 @@ import gallery from '../Photos/Projects/gallery.png';
 import wordcloud from '../Photos/Projects/wordcloud.png';
 import goodgreek from '../Photos/Projects/goodgreek.jpg';
 import goodgreekregister from '../Photos/Projects/goodgreekregister.jpg'
+import financefriend from '../Photos/Projects/financefriend.jpg';
+import thor from '../Photos/Projects/thor.png';
 import Project from '../Components/Project';
 
 export class Projects extends Component{
@@ -17,11 +19,22 @@ export class Projects extends Component{
                 <p>Click on any card to see the source code</p>
                 <div class="projects-container">
                     <Project 
-                        title="Portfolio Website" 
-                        image={portfolio} 
-                        alt="Screenshot of portfolio"
-                        description="Portfolio website build with ReactJS" 
-                        url="https://github.com/jgrantmoore/jgrantmoore.github.io" 
+                        title="Finance Friend" 
+                        image={thor} 
+                        alt="Screenshot of the home page of Finance Friend" 
+                        //image2={thor}
+                        //alt2="Screenshot of the dashboard page of Finance Friend"
+                        description="Finance Friend is your AI Companion for personal finance. Learn financial literacy from pop culture icons!" 
+                        url="https://devpost.com/software/finance-friend-oeywb9"
+                    />
+                    <Project 
+                        title="GoodGreek" 
+                        image={goodgreek} 
+                        alt="Screenshot of the home page of GoodGreek" 
+                        image2={goodgreekregister}
+                        alt2="Screenshot of the new account page of GoodGreek"
+                        description="GoodGreek is a platform for sharing and exploring philanthropy opportunities run by greek-life orgs." 
+                        url="https://devpost.com/software/goodgreek"
                     />
                     <Project 
                         title="iTunes Gallery" 
@@ -38,13 +51,11 @@ export class Projects extends Component{
                         url="https://github.com/jgrantmoore/Wordcloud-Generator" 
                     />
                     <Project 
-                        title="GoodGreek" 
-                        image={goodgreek} 
-                        alt="Screenshot of the home page of GoodGreek" 
-                        image2={goodgreekregister}
-                        alt2="Screenshot of the new account page of GoodGreek"
-                        description="GoodGreek is a platform for sharing and exploring philanthropy opportunities run by greek-life orgs." 
-                        url="https://devpost.com/software/goodgreek"
+                        title="Portfolio Website" 
+                        image={portfolio} 
+                        alt="Screenshot of portfolio"
+                        description="Portfolio website build with ReactJS" 
+                        url="https://github.com/jgrantmoore/jgrantmoore.github.io" 
                     />
                     
                 </div>
