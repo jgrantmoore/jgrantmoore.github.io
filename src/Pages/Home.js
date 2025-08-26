@@ -1,6 +1,6 @@
 ﻿import { Component } from 'react';
 import '../StyleSheets/Home.css'
-import Headshot from '../Photos/headshot.png';
+import Headshot from '../Photos/GrantMooreHeadshot.jpg';
 import { Technologies } from '../Components/Technologies';
 import { Jobs } from '../Components/Jobs';
 
@@ -45,6 +45,7 @@ async function startPacman() {
             setTimeout(() => {
                 meface.style.opacity = '0';
                 meface.style.height = "125px";
+                meface.style.width = "125px";
             }, "1800")
     
             setTimeout(() => {
