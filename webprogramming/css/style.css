@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-family: 'Google Sans Code', sans-serif;
+  font-weight: 500;
+  color: rgb(41, 19, 114);
+  font-style: italic;
+  margin-left: 5px;
+}
+
+/****************   Nav Section **********************/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(41, 19, 114);
+  color: whitesmoke;
+  padding: 0 15px;
+  font-family: 'Google Sans Code', sans-serif;
+}
+
+nav a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-family: 'Google Sans Code', sans-serif;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/***********************  Footer Section   **************************/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(41, 19, 114);
+  color: whitesmoke;
+  padding: 0 15px;
+}
+
+footer a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/*********** Splash Page ************************/
+header {
+  padding: 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header h1 {
+  font-family: 'Google Sans Code', sans-serif;
+  font-weight: 500;
+  color: rgb(41, 19, 114)
+}
+
+header img {
+  border-radius: 50%;
+}
+
+.address {}
+
+.tagline {}
+
+/************* Sections ********************/
+hr {}
+
+section h3 {
+  font-family: 'Google Sans Code', sans-serif;
+  font-weight: 500;
+  color: rgb(41, 19, 114);
+}
+
+section dl {
+  display: grid;
+  margin: 10px;
+}
+
+section ul {
+  list-style-type: square;
+}
+
+section a {
+  color: rgb(41, 19, 114);
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+/**************   Projects   *****************/
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.card img {
+  border-radius: 5px;
+}
+
+.card {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/**************   Responsiveness   *****************/
+@media (max-width: 680px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .three-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/**************   Contact Page   *****************/
+.one-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px 20px;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+textarea {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
