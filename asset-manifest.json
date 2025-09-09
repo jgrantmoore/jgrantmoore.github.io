@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.16dff23d.css",
-    "main.js": "/static/js/main.6e5fd3cb.js",
+    "main.css": "/static/css/main.023ff690.css",
+    "main.js": "/static/js/main.2a1d1727.js",
+    "static/media/GrantMooreHeadshot.jpg": "/static/media/GrantMooreHeadshot.fad188d22fa941e70ce5.jpg",
     "static/media/gallery.png": "/static/media/gallery.dcf445d4c6de0d4d2761.png",
     "static/media/portfolio.png": "/static/media/portfolio.b254860910880a4be69b.png",
     "static/media/Python.png": "/static/media/Python.4f5f52c67194dc46e313.png",
@@ -10,10 +11,8 @@
     "static/media/GrantMooreResume.pdf": "/static/media/GrantMooreResume.5f1c434e4dd7911f8ee3.pdf",
     "static/media/Java.png": "/static/media/Java.35397b59170cfd616fee.png",
     "static/media/C-Sharp.png": "/static/media/C-Sharp.766c48210078f0dd2fa1.png",
-    "static/media/Codesys.png": "/static/media/Codesys.4309b82d7cbbca49a1d6.png",
     "static/media/HTML-CSS-JS.png": "/static/media/HTML-CSS-JS.93f4622b01e303099978.png",
     "static/media/thor.png": "/static/media/thor.4439ccfa945802436ae5.png",
-    "static/media/headshot.png": "/static/media/headshot.24b86a603ff0a9660928.png",
     "static/media/financefriend.jpg": "/static/media/financefriend.09fbe948eb6ad785ceea.jpg",
     "static/media/goodgreek.jpg": "/static/media/goodgreek.801fd1d7d5052ac7f92e.jpg",
     "static/media/goodgreekregister.jpg": "/static/media/goodgreekregister.4912353c858e4c96a729.jpg",
@@ -21,11 +20,11 @@
     "static/media/Go.png": "/static/media/Go.c5deac823e6970e6cca5.png",
     "index.html": "/index.html",
     "static/media/GrantMoore.vcf": "/static/media/GrantMoore.36590e3a7997ddbfd26d.vcf",
-    "main.16dff23d.css.map": "/static/css/main.16dff23d.css.map",
-    "main.6e5fd3cb.js.map": "/static/js/main.6e5fd3cb.js.map"
+    "main.023ff690.css.map": "/static/css/main.023ff690.css.map",
+    "main.2a1d1727.js.map": "/static/js/main.2a1d1727.js.map"
   },
   "entrypoints": [
-    "static/css/main.16dff23d.css",
-    "static/js/main.6e5fd3cb.js"
+    "static/css/main.023ff690.css",
+    "static/js/main.2a1d1727.js"
   ]
 }
