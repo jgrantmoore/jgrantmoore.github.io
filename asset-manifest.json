@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.023ff690.css",
-    "main.js": "/static/js/main.2a1d1727.js",
+    "main.css": "/static/css/main.aa49cfbf.css",
+    "main.js": "/static/js/main.6bd5eeca.js",
     "static/media/GrantMooreHeadshot.jpg": "/static/media/GrantMooreHeadshot.fad188d22fa941e70ce5.jpg",
     "static/media/gallery.png": "/static/media/gallery.dcf445d4c6de0d4d2761.png",
     "static/media/portfolio.png": "/static/media/portfolio.b254860910880a4be69b.png",
@@ -20,11 +20,11 @@
     "static/media/Go.png": "/static/media/Go.c5deac823e6970e6cca5.png",
     "index.html": "/index.html",
     "static/media/GrantMoore.vcf": "/static/media/GrantMoore.36590e3a7997ddbfd26d.vcf",
-    "main.023ff690.css.map": "/static/css/main.023ff690.css.map",
-    "main.2a1d1727.js.map": "/static/js/main.2a1d1727.js.map"
+    "main.aa49cfbf.css.map": "/static/css/main.aa49cfbf.css.map",
+    "main.6bd5eeca.js.map": "/static/js/main.6bd5eeca.js.map"
   },
   "entrypoints": [
-    "static/css/main.023ff690.css",
-    "static/js/main.2a1d1727.js"
+    "static/css/main.aa49cfbf.css",
+    "static/js/main.6bd5eeca.js"
   ]
 }
