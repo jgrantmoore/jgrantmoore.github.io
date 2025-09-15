@@ -10,7 +10,8 @@ body::-webkit-scrollbar {
 }
 
 body {
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background: #002454;
+background: linear-gradient(90deg,rgba(0, 36, 84, 1) 0%, rgba(32, 83, 140, 1) 50%, rgba(0, 36, 84, 1) 100%);
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -96,8 +97,8 @@ p {
     transition: ease .3s;
     display: inline;
     float: right;
-    margin: 5px;
-    margin-top: 13px;
+    /* margin: 5px;
+    margin-top: 13px; */
 }
 
     #ablinks a:hover {

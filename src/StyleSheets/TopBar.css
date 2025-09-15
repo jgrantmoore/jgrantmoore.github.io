@@ -4,6 +4,9 @@
     top: 0px;
     background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .dropdown-content {
@@ -32,4 +35,21 @@
 
 .dropdown-content a {
     color: black !important;
+}
+
+#ablinks {
+    display: flex;
+    flex-direction: row; /* enforce left-to-right */
+    gap: 1rem; /* optional spacing between links */
+    margin-left: auto; /* keeps block pushed to right side */
+}
+
+#ablinks > * {
+    float: none !important; /* neutralize any Bootstrap float */
+}
+
+.dropdown-link::after {
+    content: "▾";
+    font-size: .9em;
+    margin-left: 0.1em;
 }

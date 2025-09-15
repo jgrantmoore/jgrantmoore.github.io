@@ -125,7 +125,7 @@ export class Home extends Component{
                 </div>
                 <div id="aboutmediv">
                     <h1>Hello!</h1>
-                    <p class="whitetext">Welcome to my portfolio! My name is Grant Moore and I’m a third-year Computer Science student at The University of Georgia. I’m passionate about software engineering and love to learn new technologies. Please explore my projects and experiences, and don’t be afraid to reach out!</p>
+                    <p class="whitetext">Welcome to my portfolio! My name is Grant Moore and I’m a senior Computer Science student at The University of Georgia. I’m passionate about software engineering and love to learn new technologies. Please explore my projects and experiences, and don’t be afraid to reach out!</p>
                 </div>
                 <Technologies />
 

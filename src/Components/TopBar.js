@@ -29,13 +29,14 @@ export class TopBar extends Component{
                 <div class="topbar" onMouseLeave={this.mouseLeaves}>
                     <header className="Name"><NavLink tag={ Link } to="/">Grant Moore</NavLink></header>
                     <div id="ablinks">
+                        <NavLink tag={Link} to="/projects">Projects</NavLink>
+                        <NavLink tag={Link} to="/resume">Resume</NavLink>
+                        
+                        <a class="dropdown-link" onClick={this.myFunction}>Social Media</a>
                         <div id="myDropdown" class="dropdown-content">
                             <a href="https://www.linkedin.com/in/james-grant-moore" target="_blank">LinkedIn</a><br />
                             <a href="https://www.instagram.com/jgmoore3.5/" target="_blank">Instagram</a><br />
                         </div>
-                        <a onClick={this.myFunction}>Social Media▾</a>
-                        <NavLink tag={Link} to="/resume">Resume</NavLink>
-                        <NavLink tag={Link} to="/projects">Projects</NavLink>
                     </div>
                 </div>
             </div>
