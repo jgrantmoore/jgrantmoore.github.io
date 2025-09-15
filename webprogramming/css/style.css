@@ -70,9 +70,16 @@ header img {
   border-radius: 50%;
 }
 
-.address {}
+.address {
+  font-style: italic;
+  margin: 5px;
+  text-align: center;
+}
 
-.tagline {}
+.tagline {
+  margin: 5px;
+  text-align: center;
+}
 
 /************* Sections ********************/
 hr {}
@@ -86,6 +93,15 @@ section h3 {
 section dl {
   display: grid;
   margin: 10px;
+  grid-template-columns: auto auto;
+}
+
+dd {
+  text-align: right;
+}
+
+dd, dt {
+  margin: 5px;
 }
 
 section ul {
@@ -104,13 +120,15 @@ section a:hover {
 /**************   Projects   *****************/
 .three-col {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   padding: 0 20px;
 }
 
 .card img {
   border-radius: 5px;
+  width: 100%;
+  height: auto;
 }
 
 .card {
@@ -122,6 +140,7 @@ section a:hover {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 0;
 }
 
 /**************   Responsiveness   *****************/
@@ -151,4 +170,18 @@ input {
 textarea {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+}
+
+.text-section {
+  margin: 0 15%;
+}
+
+#projects-header {
+  margin-left: 15%;
+}
+
+#header-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
