@@ -19,6 +19,8 @@ function startPacman() {
         var dot5 = document.getElementById('dot5');
         var pacman = document.getElementById('pacman-div');
         var meface = document.getElementById('meface');
+        
+        if (!dot1 || !dot2 || !dot3 || !dot4 || !dot5 || !pacman || !meface) return;
     
         dot1.style.transition = '.25s linear';
         dot2.style.transition = '.6s linear';
@@ -33,31 +35,39 @@ function startPacman() {
         dot5.style.right = '125vw';
     
         setTimeout(() => {
+            if (!pacman || !meface) return;
+
             pacman.style.right = '150vw';
     
             setTimeout(() => {
+                if (!dot1) return;
                 dot1.style.display = 'none';
             }, 1250)
     
             setTimeout(() => {
+                if (!dot2) return;
                 dot2.style.display = 'none';
             }, 1600)
     
             setTimeout(() => {
+                if (!meface) return;
                 meface.style.opacity = '0';
                 meface.style.height = "125px";
                 meface.style.width = "125px";
             }, 1800)
     
             setTimeout(() => {
+                if (!dot3) return;
                 dot3.style.display = 'none';
             }, 2500)
     
             setTimeout(() => {
+                if (!dot4) return;
                 dot4.style.display = 'none';
             }, 2850)
 
             setTimeout(() => {
+                if (!dot5) return;
                 dot5.style.display = 'none';
             }, 3000)
     
@@ -84,6 +94,8 @@ function startPacman() {
             firstnameheading.style.opacity = "0";
             firstnameheading.style.visibility = "hidden";
 
+            if (!startingdiv || !titlediv || !meface) return;
+
             titlediv.insertBefore(firstnameheading, titlediv.firstChild);
             titlediv.appendChild(lastnameheading);
             
@@ -93,6 +105,7 @@ function startPacman() {
             meface.style.transition = '.5s';
             
             setTimeout(() => {
+                if (!meface) return;
                 firstnameheading.style.opacity = "1";
                 firstnameheading.style.visibility = "visible";
                 lastnameheading.style.opacity = "1";
