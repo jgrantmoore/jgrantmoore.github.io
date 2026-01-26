@@ -1,2 +1,0 @@
-C:\Users\grantmoore\source\repos\Portfolio\Portfolio\obj\Debug\portfolio.esproj.SuggestedBindingRedirects.cache
-C:\Users\grantmoore\source\repos\Portfolio\Portfolio\obj\Debug\portfolio.esproj.CoreCompileInputs.cache

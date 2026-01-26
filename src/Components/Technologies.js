@@ -1,44 +1,49 @@
-import React, { Component } from 'react';
+'use client';
+
+import Image from 'next/image';
 import '../StyleSheets/Technologies.css';
 
-export class Technologies extends Component {
+// Import all technology images
+import cSharp from '../Photos/Technologies/C-Sharp.png';
+import c from '../Photos/Technologies/C.png';
+import go from '../Photos/Technologies/Go.png';
+import htmlCssJs from '../Photos/Technologies/HTML-CSS-JS.png';
+import java from '../Photos/Technologies/Java.png';
+import python from '../Photos/Technologies/Python.png';
+import react from '../Photos/Technologies/React.png';
+import restfulApis from '../Photos/Technologies/Restful-APIs.png';
+import signalR from '../Photos/Technologies/SignalR.png';
+import vue from '../Photos/Technologies/Vue.png';
 
-    // Initialize state to hold the image list
-    state = {
-        images: []
-    };
+const techImages = [
+    { src: cSharp, alt: 'C#' },
+    { src: c, alt: 'C' },
+    { src: go, alt: 'Go' },
+    { src: htmlCssJs, alt: 'HTML, CSS, JavaScript' },
+    { src: java, alt: 'Java' },
+    { src: python, alt: 'Python' },
+    { src: react, alt: 'React' },
+    { src: restfulApis, alt: 'RESTful APIs' },
+    { src: signalR, alt: 'SignalR' },
+    { src: vue, alt: 'Vue' },
+];
 
-    // Method to import all images dynamically
-    importAll = (r) => {
-        return r.keys().map(r);
-    }
-
-    // Method to update the state with the image list
-    createImageList = () => {
-        // Make sure to reference `this.importAll` here
-        let images = this.importAll(require.context('../Photos/Technologies', false, /\.(png|jpe?g|svg)$/));
-
-        // Update the state with the list of images
-        this.setState({ images });
-    }
-
-    // Lifecycle method to automatically generate the list when the component mounts
-    componentDidMount() {
-        this.createImageList(); // Generate the image list automatically when the component mounts
-    }
-
-    render() {
-        return (
-            <div id="technologies-div">
-                <h1 id="tech-title">Technologies</h1>
-                <div id="technologies-list">
-                    {/* Render the images from state */}
-                    {this.state.images.map((image, index) => (
-                        <img key={index} src={image} alt={`tech-${index}`} className="tech-img" />
-                    ))}
-                    
-                </div>
+export default function Technologies() {
+    return (
+        <div id="technologies-div">
+            <h1 id="tech-title">Technologies</h1>
+            <div id="technologies-list">
+                {techImages.map((tech, index) => (
+                    <Image 
+                        key={index} 
+                        src={tech.src} 
+                        alt={tech.alt} 
+                        className="tech-img"
+                        width={80}
+                        height={80}
+                    />
+                ))}
             </div>
-        );
-    }
+        </div>
+    );
 }

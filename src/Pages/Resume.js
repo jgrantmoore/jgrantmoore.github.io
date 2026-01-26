@@ -1,21 +1,16 @@
-﻿import { Component } from 'react';
-import '../StyleSheets/Resume.css';
-import resume from '../Files/GrantMooreResume.pdf'
+'use client';
+import '../StyleSheets/index.css'
+import '../StyleSheets/Home.css'
+import '../StyleSheets/Resume.css'
 
-export class Resume extends Component{
+export default function Resume() {
+    const resume = '/GrantMooreResume.pdf';
 
-    render() {
-
-        return (
-            <div id="resume-div">
-                <h1 id="resumeheader">My Resume</h1>
-                <a id="download-button" href={ resume } download="GrantMooreResume.pdf">Download as PDF</a>
-                <iframe src={resume} id="resume-pdf"></iframe>
-                
-            </div>
-        );
-
-    }
-    
-
+    return (
+        <div id="resume-div">
+            <h1 id="resumeheader">My Resume</h1>
+            <a id="download-button" href={resume} download="GrantMooreResume.pdf">Download as PDF</a>
+            <iframe src={resume} id="resume-pdf" title="Grant Moore Resume"></iframe>
+        </div>
+    );
 }

@@ -48,6 +48,16 @@
     float: none !important; /* neutralize any Bootstrap float */
 }
 
+.dropdown-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+    padding-right: 10px;
+    font-family: 'Audiowide';
+}
+
 .dropdown-link::after {
     content: "▾";
     font-size: .9em;
