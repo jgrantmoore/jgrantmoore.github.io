@@ -5,8 +5,8 @@ import Image from 'next/image';
 import '../stylesheets/index.css'
 import '../stylesheets/Home.css'
 import Headshot from '@/public/images/GrantMooreHeadshot.jpg';
-import Technologies from '../Components/Technologies';
-import Jobs from '../Components/Jobs';
+import Technologies from '../components/Technologies';
+import Jobs from '../components/Jobs';
 
 function startPacman() {
     var x = window.matchMedia("(max-width: 700px)")

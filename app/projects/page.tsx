@@ -10,7 +10,7 @@ import goodgreek from '@/public/images/Projects/goodgreek.jpg';
 import goodgreekregister from '@/public/images/Projects/goodgreekregister.jpg'
 import financefriend from '@/public/images/Projects/financefriend.jpg';
 import thor from '@/public/images/Projects/thor.png';
-import Project from '../../Components/Project';
+import Project from '../../components/Project';
 
 export default function Projects() {
     return (
