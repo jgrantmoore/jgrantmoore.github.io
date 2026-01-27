@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJ3h2dgn0pONnasN7ai6z228kGHRfKzy_GRfGYGTStJiZxz3rIAqiMavSwa8M3j6-j/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfFyIGgGM1ijXqmsNF_QwTSfhsPtmAJZCJef1LhynJ7aamawhh0qpqY-9RpyH1W9bK/exec";
 const TMDB_AUTH = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMTdlOTMxYjY4MjM1NjBkNGNmMjc0YzhkZmZhMTc4YSIsIm5iZiI6MTc1MDE5MTEwOC40MjcsInN1YiI6IjY4NTFjYzA0YWViYTJkMmZlNGIzMTU0ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Q-mtZuNx4NSIMwB1aO6vwA3MmzkiBOTALyFBLg8cwsc';
 
 interface ScheduledMovie {
@@ -92,11 +92,13 @@ export default function ReleaseOrder() {
         <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
             <div className="max-w-4xl mx-auto">
                 <header className="text-center mb-16">
-                    <h1 className="text-6xl font-black italic tracking-tighter mb-4">RELEASE ORDER</h1>
+                    <h1 className="text-6xl font-black italic tracking-tighter mb-4">DRAFT BOARD</h1>
                     <div className="flex items-center justify-center gap-4 text-neutral-500 font-bold text-[12px] tracking-[0.2em] uppercase">
                         <Link href="/movies" className="text-blue-500 hover:text-blue-400 transition-colors">Home</Link>
                         <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
                         <Link href="/movies/leaderboard" className="text-blue-500 hover:text-blue-400 transition-colors">Leaderboard</Link>
+                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
+                        <Link href="/movies/release-order" className="text-blue-500 hover:text-blue-400 transition-colors">Release Order</Link>
                     </div>
                 </header>
 

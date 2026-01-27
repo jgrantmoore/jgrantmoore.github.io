@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJ3h2dgn0pONnasN7ai6z228kGHRfKzy_GRfGYGTStJiZxz3rIAqiMavSwa8M3j6-j/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfFyIGgGM1ijXqmsNF_QwTSfhsPtmAJZCJef1LhynJ7aamawhh0qpqY-9RpyH1W9bK/exec";
 const TMDB_AUTH = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMTdlOTMxYjY4MjM1NjBkNGNmMjc0YzhkZmZhMTc4YSIsIm5iZiI6MTc1MDE5MTEwOC40MjcsInN1YiI6IjY4NTFjYzA0YWViYTJkMmZlNGIzMTU0ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Q-mtZuNx4NSIMwB1aO6vwA3MmzkiBOTALyFBLg8cwsc';
 
 export default function Movies() {
@@ -222,7 +222,7 @@ export default function Movies() {
                                         }
 
                                         return (
-                                            <div key={`${obj.id}-${idx}`} className={`p-4 rounded-lg border flex flex-col justify-between min-h-[160px] transition-all ${cardStyle}`}>
+                                            <div key={`${player.name}-${obj.isBench ? 'bench' : 'starting'}-${idx}`} className={`p-4 rounded-lg border flex flex-col justify-between min-h-[160px] transition-all ${cardStyle}`}>
                                                 <div>
                                                     <p className='font-bold text-xs md:text-sm line-clamp-2 h-8 mb-1'>{details?.title || 'Loading...'}</p>
                                                     <p className='text-[9px] uppercase text-neutral-500 font-bold'>{obj.isBench ? 'Bench' : 'Starting'}</p>
