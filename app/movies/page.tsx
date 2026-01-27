@@ -12,6 +12,8 @@ export default function Movies() {
     const [movieDetails, setMovieDetails] = useState<{ [key: string]: any }>({});
     const [editingPlayerName, setEditingPlayerName] = useState<string | null>(null);
     const [openBench, setOpenBench] = useState<Set<string>>(new Set());
+    // Track which SPECIFIC player is saving
+    const [savingPlayerName, setSavingPlayerName] = useState<string | null>(null);
 
     const [selectedForExchange, setSelectedForExchange] = useState<{ id: string, isBench: boolean } | null>(null);
     const [swapping, setSwapping] = useState<{ playerName: string, movieId: string, isBench: boolean } | null>(null);
@@ -47,7 +49,8 @@ export default function Movies() {
     const saveToSheet = async (playerName: string) => {
         const playerData = draft.find(p => p.name === playerName);
         if (!playerData) return;
-        setLoading(true);
+
+        setSavingPlayerName(playerName); // Only this player shows "Saving..."
         try {
             await fetch(SCRIPT_URL, {
                 method: 'POST',
@@ -55,8 +58,8 @@ export default function Movies() {
                 body: JSON.stringify(playerData)
             });
             setEditingPlayerName(null);
-        } catch (e) { alert("Save failed. Check console."); }
-        finally { setLoading(false); }
+        } catch (e) { alert("Save failed."); }
+        finally { setSavingPlayerName(null); }
     };
 
     const handleExchange = (playerName: string, movieId: string, isBench: boolean) => {
@@ -170,9 +173,25 @@ export default function Movies() {
                                 <div className="flex justify-between items-center mb-6">
                                     <div className="flex items-center gap-4">
                                         <h2 className='text-2xl font-bold text-blue-500'>{player.name}</h2>
-                                        <button onClick={() => isEditing ? saveToSheet(player.name) : setEditingPlayerName(player.name)}
-                                            className={`text-[10px] uppercase font-bold px-4 py-1.5 rounded-full border ${isEditing ? 'bg-green-600 border-green-600 text-white' : 'border-neutral-700 text-neutral-500'}`}>
-                                            {isEditing ? '💾 Save Changes' : '✎ Edit'}
+                                        <button
+                                            // Disable if ANYONE is saving
+                                            disabled={savingPlayerName !== null}
+                                            onClick={() => isEditing ? saveToSheet(player.name) : setEditingPlayerName(player.name)}
+                                            className={`text-[10px] uppercase font-black px-4 py-2 rounded-full border transition-all duration-200
+        ${savingPlayerName === player.name
+                                                    ? 'bg-orange-600 border-orange-600 text-white animate-pulse cursor-wait w-[160px]' // Fixed width prevents jumping
+                                                    : isEditing
+                                                        ? 'bg-green-600 border-green-600 text-white hover:bg-green-500 shadow-lg shadow-green-900/20'
+                                                        : 'border-neutral-700 text-neutral-500 hover:text-white hover:border-neutral-500'} 
+        ${savingPlayerName !== null && savingPlayerName !== player.name ? 'opacity-30 cursor-not-allowed' : ''}`}
+                                        >
+                                            {savingPlayerName === player.name ? (
+                                                "⌛ SAVING... DON'T LEAVE"
+                                            ) : isEditing ? (
+                                                '💾 Save Changes'
+                                            ) : (
+                                                '✎ Edit'
+                                            )}
                                         </button>
                                     </div>
                                     <button onClick={() => { const next = new Set(openBench); next.has(player.name) ? next.delete(player.name) : next.add(player.name); setOpenBench(next); }} className='px-4 py-2 bg-neutral-800 rounded-lg text-sm'>
