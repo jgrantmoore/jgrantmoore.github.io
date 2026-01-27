@@ -117,13 +117,21 @@ export default function Movies() {
         setSwapping(null);
     };
 
-    if (loading && draft.length === 0) return <div className="bg-black text-white min-h-screen flex items-center justify-center">Loading...</div>;
+    if (loading && draft.length === 0) return <div className="min-h-screen bg-black text-white flex items-center justify-center font-black italic tracking-widest">LOADING...</div>;
 
     return (
-        <div className="min-h-screen bg-black text-white p-4 md:p-8">
-            <div className='flex flex-col items-center max-w-6xl mx-auto'>
-                <h1 className="text-3xl font-extrabold mb-8">Fantasy Movie League</h1>
-
+        <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
+            <div className="max-w-6xl mx-auto">
+                <header className="text-center mb-16">
+                    <h1 className="text-6xl font-black italic tracking-tighter mb-4">DRAFT BOARD</h1>
+                    <div className="flex items-center justify-center gap-4 text-neutral-500 font-bold text-[12px] tracking-[0.2em] uppercase">
+                        <Link href="/movies" className="text-blue-500 hover:text-blue-400 transition-colors">Home</Link>
+                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
+                        <Link href="/movies/leaderboard" className="text-blue-500 hover:text-blue-400 transition-colors">Leaderboard</Link>
+                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
+                        <Link href="/movies/release-order" className="text-blue-500 hover:text-blue-400 transition-colors">Release Order</Link>
+                    </div>
+                </header>
                 {swapping && (
                     <div className="fixed inset-0 bg-black/95 flex items-center justify-center z-[100] p-4">
                         <div className="bg-neutral-900 border border-neutral-700 p-6 rounded-2xl w-full max-w-md shadow-2xl">
@@ -229,7 +237,15 @@ export default function Movies() {
                                                         </div>
                                                     ) : (
                                                         <div className="space-y-1">
-                                                            <p className='text-lg font-mono font-bold'>${((details?.revenue || 0) / 1000000).toFixed(1)}M</p>
+                                                            <p className='text-lg font-mono font-bold'>
+                                                                {(() => {
+                                                                    const rev = details?.revenue || 0;
+                                                                    if (rev >= 1000000000) {
+                                                                        return `$${(rev / 1000000000).toFixed(2)}B`;
+                                                                    }
+                                                                    return `$${(rev / 1000000).toFixed(1)}M`;
+                                                                })()}
+                                                            </p>
                                                             <p className="text-[10px] text-neutral-500">{details?.release_date || 'TBD'}</p>
                                                         </div>
                                                     )}
