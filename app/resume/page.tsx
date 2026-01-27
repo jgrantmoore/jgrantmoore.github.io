@@ -3,9 +3,14 @@ import '../../stylesheets/index.css'
 import '../../stylesheets/Home.css'
 import '../../stylesheets/Resume.css'
 import TopBar from '@/components/TopBar';
+import { useEffect } from 'react';
 
 export default function Resume() {
     const resume = '/GrantMooreResume.pdf';
+
+    useEffect(() => {
+            document.title = "Grant Moore - Resume";
+        }, []);
 
     return (
         <div>

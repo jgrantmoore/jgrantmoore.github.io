@@ -23,6 +23,10 @@ export default function Movies() {
     const options = { method: 'GET', headers: { accept: 'application/json', Authorization: TMDB_AUTH } };
 
     useEffect(() => {
+        document.title = "Fantasy Movie League - Home";
+    }, []);
+
+    useEffect(() => {
         async function fetchData() {
             try {
                 const draftRes = await fetch(SCRIPT_URL);

@@ -20,6 +20,10 @@ export default function ReleaseOrder() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        document.title = "Fantasy Movie League - Release Order";
+    }, []);
+
+    useEffect(() => {
         async function fetchSchedule() {
             try {
                 const draftRes = await fetch(SCRIPT_URL);
@@ -27,7 +31,7 @@ export default function ReleaseOrder() {
 
                 // 1. Collect all unique IDs
                 const allIds = Array.from(new Set(draftData.flatMap((p: any) => [...p.starting, ...p.bench])));
-                
+
                 // 2. Fetch TMDB Details
                 const options = { method: 'GET', headers: { accept: 'application/json', Authorization: TMDB_AUTH } };
                 const detailPromises = allIds.map(async (id: any) => {
@@ -105,12 +109,12 @@ export default function ReleaseOrder() {
                 <div className="relative border-l-2 border-neutral-900 ml-4 md:ml-0">
                     {schedule.map((movie, idx) => {
                         const isReleased = movie.releaseDate <= today;
-                        
+
                         return (
                             <div key={`${movie.id}-${idx}`} className="mb-10 ml-8 relative">
                                 {/* Timeline Dot */}
                                 <div className={`absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-black transition-colors ${isReleased ? 'bg-green-500' : 'bg-blue-600'}`} />
-                                
+
                                 <div className={`p-5 rounded-2xl border transition-all ${isReleased ? 'bg-neutral-900/40 border-neutral-800 opacity-60' : 'bg-neutral-900 border-neutral-700 shadow-xl'}`}>
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                         <div>

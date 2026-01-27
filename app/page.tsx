@@ -128,6 +128,10 @@ export default function Home() {
         startPacman();
     }, []);
 
+    useEffect(() => {
+        document.title = "Grant Moore - Portfolio";
+    }, []);
+
     return (
         <div>
             <TopBar />

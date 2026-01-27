@@ -12,8 +12,13 @@ import financefriend from '@/public/images/Projects/financefriend.jpg';
 import thor from '@/public/images/Projects/thor.png';
 import Project from '@/components/Project';
 import TopBar from '@/components/TopBar';
+import { useEffect } from 'react';
 
 export default function Projects() {
+    useEffect(() => {
+        document.title = "Grant Moore - Projects";
+    }, []);
+
     return (
         <div>
             <TopBar />

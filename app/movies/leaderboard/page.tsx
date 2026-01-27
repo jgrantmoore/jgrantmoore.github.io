@@ -18,6 +18,10 @@ export default function Leaderboard() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        document.title = "Fantasy Movie League - Leaderboard";
+    }, []);
+
+    useEffect(() => {
         async function fetchAndRank() {
             try {
                 const draftRes = await fetch(SCRIPT_URL);
