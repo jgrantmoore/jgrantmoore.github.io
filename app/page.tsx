@@ -5,8 +5,9 @@ import Image from 'next/image';
 import '../stylesheets/index.css'
 import '../stylesheets/Home.css'
 import Headshot from '@/public/images/GrantMooreHeadshot.jpg';
-import Technologies from '../components/Technologies';
-import Jobs from '../components/Jobs';
+import Technologies from '@/components/Technologies';
+import Jobs from '@/components/Jobs';
+import TopBar from '@/components/TopBar';
 
 function startPacman() {
     var x = window.matchMedia("(max-width: 700px)")
@@ -19,48 +20,48 @@ function startPacman() {
         var dot5 = document.getElementById('dot5');
         var pacman = document.getElementById('pacman-div');
         var meface = document.getElementById('meface');
-        
+
         if (!dot1 || !dot2 || !dot3 || !dot4 || !dot5 || !pacman || !meface) return;
-    
+
         dot1.style.transition = '.25s linear';
         dot2.style.transition = '.6s linear';
         dot3.style.transition = '1.6s linear';
         dot4.style.transition = '1.95s linear';
         dot5.style.transition = '2.6s linear';
-    
+
         dot1.style.right = '8vw';
         dot2.style.right = '25vw';
         dot3.style.right = '75vw';
         dot4.style.right = '92vw';
         dot5.style.right = '125vw';
-    
+
         setTimeout(() => {
             if (!pacman || !meface) return;
 
             pacman.style.right = '150vw';
-    
+
             setTimeout(() => {
                 if (!dot1) return;
                 dot1.style.display = 'none';
             }, 1250)
-    
+
             setTimeout(() => {
                 if (!dot2) return;
                 dot2.style.display = 'none';
             }, 1600)
-    
+
             setTimeout(() => {
                 if (!meface) return;
                 meface.style.opacity = '0';
                 meface.style.height = "125px";
                 meface.style.width = "125px";
             }, 1800)
-    
+
             setTimeout(() => {
                 if (!dot3) return;
                 dot3.style.display = 'none';
             }, 2500)
-    
+
             setTimeout(() => {
                 if (!dot4) return;
                 dot4.style.display = 'none';
@@ -70,18 +71,18 @@ function startPacman() {
                 if (!dot5) return;
                 dot5.style.display = 'none';
             }, 3000)
-    
+
         }, 2000);
-    
+
         setTimeout(() => {
             const startingdiv = document.getElementById("startingdiv");
             const titlediv = document.getElementById("titlediv");
-            
+
             // Check if elements already exist to prevent duplicates
             if (document.getElementById("firstname") || document.getElementById("lastname")) {
                 return;
             }
-            
+
             const lastnameheading = document.createElement("h1");
             lastnameheading.innerHTML = "Moore";
             lastnameheading.id = "lastname";
@@ -98,12 +99,12 @@ function startPacman() {
 
             titlediv.insertBefore(firstnameheading, titlediv.firstChild);
             titlediv.appendChild(lastnameheading);
-            
+
             startingdiv.style.transition = '1s ease-in-out';
             firstnameheading.style.transition = '.5s ease-in-out';
             lastnameheading.style.transition = '.5s ease-in-out';
             meface.style.transition = '.5s';
-            
+
             setTimeout(() => {
                 if (!meface) return;
                 firstnameheading.style.opacity = "1";
@@ -128,23 +129,26 @@ export default function Home() {
     }, []);
 
     return (
-        <div id="body">
-            <div id="startingdiv">
-                <div id="titlediv">
-                    <Image id="meface" src={Headshot} alt="Grant Moore headshot" />
+        <div>
+            <TopBar />
+            <div id="body">
+                <div id="startingdiv">
+                    <div id="titlediv">
+                        <Image id="meface" src={Headshot} alt="Grant Moore headshot" />
+                    </div>
+                    <div id="pacman-div" className="pacman">
+                        <div className="pacman-top"></div>
+                        <div className="pacman-bottom"></div>
+                    </div>
+                    <span className="dot" id="dot1" /> <span className="dot" id="dot2" /> <span className="dot" id="dot3" /> <span className="dot" id="dot4" /> <span className="dot" id="dot5" />
                 </div>
-                <div id="pacman-div" className="pacman">
-                    <div className="pacman-top"></div>
-                    <div className="pacman-bottom"></div>
+                <div id="aboutmediv">
+                    <h1>Hello!</h1>
+                    <p className="whitetext">Welcome to my portfolio! My name is Grant Moore and I'm a senior Computer Science student at The University of Georgia. I'm passionate about software engineering and love to learn new technologies. Please explore my projects and experiences, and don't be afraid to reach out!</p>
                 </div>
-                <span className="dot" id="dot1" /> <span className="dot" id="dot2" /> <span className="dot" id="dot3" /> <span className="dot" id="dot4" /> <span className="dot" id="dot5" />
+                <Technologies />
+                <Jobs />
             </div>
-            <div id="aboutmediv">
-                <h1>Hello!</h1>
-                <p className="whitetext">Welcome to my portfolio! My name is Grant Moore and I'm a senior Computer Science student at The University of Georgia. I'm passionate about software engineering and love to learn new technologies. Please explore my projects and experiences, and don't be afraid to reach out!</p>
-            </div>
-            <Technologies />
-            <Jobs />
         </div>
     );
 }
