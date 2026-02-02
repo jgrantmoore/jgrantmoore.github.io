@@ -77,7 +77,7 @@ export default function Leaderboard() {
     }, []);
 
     if (loading) return (
-        <div className="min-h-screen bg-black text-white flex items-center justify-center font-black italic tracking-widest">
+        <div className="min-h-screen bg-black text-white flex items-center justify-center font-black italic tracking-widest animate-pulse">
             SYNCING LIVE SCORES...
         </div>
     );

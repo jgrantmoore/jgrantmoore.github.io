@@ -121,7 +121,7 @@ export default function Movies() {
         setSwapping(null);
     };
 
-    if (loading && draft.length === 0) return <div className="min-h-screen bg-black text-white flex items-center justify-center font-black italic tracking-widest">LOADING...</div>;
+    if (loading && draft.length === 0) return <div className="min-h-screen bg-black text-white flex items-center justify-center font-black italic tracking-widest animate-pulse">LOADING...</div>;
 
     return (
         <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
@@ -228,7 +228,7 @@ export default function Movies() {
                                         return (
                                             <div key={`${player.name}-${obj.isBench ? 'bench' : 'starting'}-${idx}`} className={`p-4 rounded-lg border flex flex-col justify-between min-h-[160px] transition-all ${cardStyle}`}>
                                                 <div>
-                                                    <p className='font-bold text-xs md:text-sm line-clamp-2 h-8 mb-1'>{details?.title || 'Loading...'}</p>
+                                                    <p className='font-bold text-xs md:text-sm line-clamp-2 h-10 mb-1'>{details?.title || 'Loading...'}</p>
                                                     <p className='text-[9px] uppercase text-neutral-500 font-bold'>{obj.isBench ? 'Bench' : 'Starting'}</p>
                                                 </div>
                                                 <div className="mt-4 pt-4 border-t border-neutral-800/50">
