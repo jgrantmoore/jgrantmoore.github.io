@@ -227,11 +227,26 @@ export default function Movies() {
 
                                         return (
                                             <div key={`${player.name}-${obj.isBench ? 'bench' : 'starting'}-${idx}`} className={`p-4 rounded-lg border flex flex-col justify-between min-h-[160px] transition-all ${cardStyle}`}>
-                                                <div>
-                                                    <p className='font-bold text-xs md:text-sm line-clamp-2 h-10 mb-1'>{details?.title || 'Loading...'}</p>
-                                                    <p className='text-[9px] uppercase text-neutral-500 font-bold'>{obj.isBench ? 'Bench' : 'Starting'}</p>
+                                                <div className=''>
+                                                    <div className="w-full aspect-[2/3] bg-neutral-900 rounded overflow-hidden">
+                                                        {details?.poster_path ? (
+                                                            <img
+                                                                src={`https://image.tmdb.org/t/p/w400${details.poster_path}`}
+                                                                alt={details?.title || 'Movie Poster'}
+                                                                className="w-full h-full object-cover"
+                                                            />
+                                                        ) : (
+                                                            <div className="w-full h-full flex items-center justify-center text-xs text-neutral-500">
+                                                                No Image
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                    <div>
+                                                        <p className='font-bold text-xs md:text-sm line-clamp-2 h-8.8 mt-1 mb-1'><a target='_blank' className="hover:text-blue-300 hover:underline" href={`https://www.themoviedb.org/movie/${obj.id}`}>{details?.title || 'Loading...'}</a></p>
+                                                        <p className='text-[9px] uppercase text-neutral-500 font-bold'>{obj.isBench ? 'Bench' : 'Starting'}</p>
+                                                    </div>
                                                 </div>
-                                                <div className="mt-4 pt-4 border-t border-neutral-800/50">
+                                                <div className="mt-1 pt-1 border-t border-neutral-800/50">
                                                     {isEditing ? (
                                                         <div className="flex flex-col gap-2">
                                                             <button onClick={() => setSwapping({ playerName: player.name, movieId: obj.id, isBench: obj.isBench })} className="bg-white text-black text-[9px] font-black py-1.5 rounded">REPLACE</button>
