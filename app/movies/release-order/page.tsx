@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import MovieHeader from '../components/MovieHeader';
 import { get } from 'http';
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfFyIGgGM1ijXqmsNF_QwTSfhsPtmAJZCJef1LhynJ7aamawhh0qpqY-9RpyH1W9bK/exec";
@@ -23,7 +23,7 @@ export default function ReleaseOrder() {
     const [sortBy, setSortBy] = useState<'us'|'intl'>('intl');
 
     useEffect(() => {
-        document.title = "Fantasy Movie League - Release Order";
+        document.title = "Movie Boxing - Release Order";
     }, []);
 
     useEffect(() => {
@@ -116,21 +116,18 @@ export default function ReleaseOrder() {
         return arr;
     }, [schedule, sortBy]);
 
-    if (loading) return <div className="min-h-screen bg-black text-white flex items-center justify-center font-black italic animate-pulse">LOADING CALENDAR...</div>;
+    if (loading) return (
+        <div  className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
+            <MovieHeader />
+            <div className="bg-black text-white flex items-center justify-center font-black italic animate-pulse">LOADING CALENDAR...</div>
+        </div>
+        
+    );
 
     return (
         <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
             <div className="max-w-4xl mx-auto">
-                <header className="text-center mb-8">
-                    <h1 className="text-6xl font-black italic tracking-tighter mb-4">DRAFT BOARD</h1>
-                    <div className="flex items-center justify-center gap-4 text-neutral-500 font-bold text-[12px] tracking-[0.2em] uppercase">
-                        <Link href="/movies" className="text-blue-500 hover:text-blue-400 transition-colors">Home</Link>
-                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
-                        <Link href="/movies/leaderboard" className="text-blue-500 hover:text-blue-400 transition-colors">Leaderboard</Link>
-                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
-                        <Link href="/movies/release-order" className="text-blue-500 hover:text-blue-400 transition-colors">Release Order</Link>
-                    </div>
-                </header>
+                <MovieHeader />
                 <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as 'us' | 'intl')}
@@ -141,7 +138,7 @@ export default function ReleaseOrder() {
                 </select>
                 <div className="relative border-l-2 border-neutral-900 ml-12 md:ml-0">
                     {sortedSchedule.map((movie, idx) => {
-                        const isReleased = movie.usReleaseDate <= today;
+                        const isReleased = movie.usReleaseDate <= today || movie.internationalReleaseDate <= today;
 
                         return (
                             <div key={`${movie.id}-${idx}`} className="mb-10 ml-8 relative">

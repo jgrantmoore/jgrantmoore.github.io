@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import MovieCard from './components/MovieCard';
+import MovieHeader from './components/MovieHeader';
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfFyIGgGM1ijXqmsNF_QwTSfhsPtmAJZCJef1LhynJ7aamawhh0qpqY-9RpyH1W9bK/exec";
 const TMDB_AUTH = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMTdlOTMxYjY4MjM1NjBkNGNmMjc0YzhkZmZhMTc4YSIsIm5iZiI6MTc1MDE5MTEwOC40MjcsInN1YiI6IjY4NTFjYzA0YWViYTJkMmZlNGIzMTU0ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Q-mtZuNx4NSIMwB1aO6vwA3MmzkiBOTALyFBLg8cwsc';
@@ -23,7 +24,7 @@ export default function Movies() {
     const options = { method: 'GET', headers: { accept: 'application/json', Authorization: TMDB_AUTH } };
 
     useEffect(() => {
-        document.title = "Fantasy Movie League - Home";
+        document.title = "Movie Boxing - Home";
     }, []);
 
     useEffect(() => {
@@ -121,21 +122,19 @@ export default function Movies() {
         setSwapping(null);
     };
 
-    if (loading && draft.length === 0) return <div className="min-h-screen bg-black text-white flex items-center justify-center font-black italic tracking-widest animate-pulse">LOADING...</div>;
+    if (loading && draft.length === 0) return (
+        <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
+            <MovieHeader />
+            <div className="bg-black text-white flex items-center justify-center font-black italic tracking-widest animate-pulse">LOADING...</div>
+        </div>
+    );
+
+
 
     return (
         <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
             <div className="max-w-6xl mx-auto">
-                <header className="text-center mb-16">
-                    <h1 className="text-6xl font-black italic tracking-tighter mb-4">DRAFT BOARD</h1>
-                    <div className="flex items-center justify-center gap-4 text-neutral-500 font-bold text-[12px] tracking-[0.2em] uppercase">
-                        <Link href="/movies" className="text-blue-500 hover:text-blue-400 transition-colors">Home</Link>
-                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
-                        <Link href="/movies/leaderboard" className="text-blue-500 hover:text-blue-400 transition-colors">Leaderboard</Link>
-                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
-                        <Link href="/movies/release-order" className="text-blue-500 hover:text-blue-400 transition-colors">Release Order</Link>
-                    </div>
-                </header>
+                <MovieHeader />
                 {swapping && (
                     <div className="fixed inset-0 bg-black/95 flex items-center justify-center z-[100] p-4">
                         <div className="bg-neutral-900 border border-neutral-700 p-6 rounded-2xl w-full max-w-md shadow-2xl">
@@ -217,59 +216,21 @@ export default function Movies() {
                                     ].map((obj, idx) => {
                                         const details = movieDetails[obj.id];
                                         const isSelected = selectedForExchange?.id === obj.id;
-                                        let cardStyle = isSelected ? 'border-blue-500 ring-2 ring-blue-500/50 bg-blue-900/10' : 'border-neutral-700 bg-neutral-800/50';
-
-                                        if (details?.release_date && !isSelected) {
-                                            const rel = new Date(details.release_date);
-                                            if (rel <= new Date()) cardStyle = 'border-green-500/30 bg-green-500/5';
-                                            else if (rel <= new Date(new Date().setMonth(new Date().getMonth() + 1))) cardStyle = 'border-orange-500/30 bg-orange-500/5';
-                                        }
+                                        const key = `${player.name}-${obj.isBench ? 'bench' : 'starting'}-${idx}`;
 
                                         return (
-                                            <div key={`${player.name}-${obj.isBench ? 'bench' : 'starting'}-${idx}`} className={`p-4 rounded-lg border flex flex-col justify-between min-h-[160px] transition-all ${cardStyle}`}>
-                                                <div className=''>
-                                                    <div className="w-full aspect-[2/3] bg-neutral-900 rounded overflow-hidden">
-                                                        {details?.poster_path ? (
-                                                            <img
-                                                                src={`https://image.tmdb.org/t/p/w400${details.poster_path}`}
-                                                                alt={details?.title || 'Movie Poster'}
-                                                                className="w-full h-full object-cover"
-                                                            />
-                                                        ) : (
-                                                            <div className="w-full h-full flex items-center justify-center text-xs text-neutral-500">
-                                                                No Image
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    <div>
-                                                        <p className='font-bold text-xs md:text-sm line-clamp-2 h-8.8 mt-1 mb-1'><a target='_blank' className="hover:text-blue-300 hover:underline" href={`https://www.themoviedb.org/movie/${obj.id}`}>{details?.title || 'Loading...'}</a></p>
-                                                        <p className='text-[9px] uppercase text-neutral-500 font-bold'>{obj.isBench ? 'Bench' : 'Starting'}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="mt-1 pt-1 border-t border-neutral-800/50">
-                                                    {isEditing ? (
-                                                        <div className="flex flex-col gap-2">
-                                                            <button onClick={() => setSwapping({ playerName: player.name, movieId: obj.id, isBench: obj.isBench })} className="bg-white text-black text-[9px] font-black py-1.5 rounded">REPLACE</button>
-                                                            <button onClick={() => handleExchange(player.name, obj.id, obj.isBench)} className={`text-[9px] font-black py-1.5 rounded ${isSelected ? 'bg-red-600' : 'bg-blue-600'}`}>
-                                                                {isSelected ? 'CANCEL' : (selectedForExchange ? 'CONFIRM' : 'SWAP')}
-                                                            </button>
-                                                        </div>
-                                                    ) : (
-                                                        <div className="space-y-1">
-                                                            <p className='text-lg font-mono font-bold'>
-                                                                {(() => {
-                                                                    const rev = details?.revenue || 0;
-                                                                    if (rev >= 1000000000) {
-                                                                        return `$${(rev / 1000000000).toFixed(2)}B`;
-                                                                    }
-                                                                    return `$${(rev / 1000000).toFixed(1)}M`;
-                                                                })()}
-                                                            </p>
-                                                            <p className="text-[10px] text-neutral-500">{details?.release_date || 'TBD'}</p>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
+                                            <MovieCard
+                                                key={key}
+                                                playerName={player.name}
+                                                movieId={obj.id}
+                                                isBench={obj.isBench}
+                                                details={details}
+                                                isSelected={isSelected}
+                                                isEditing={isEditing}
+                                                selectedForExchange={selectedForExchange}
+                                                setSwapping={setSwapping}
+                                                handleExchange={handleExchange}
+                                            />
                                         );
                                     })}
                                 </div>

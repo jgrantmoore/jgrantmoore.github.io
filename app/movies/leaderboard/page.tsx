@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import MovieHeader from '../components/MovieHeader';
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfFyIGgGM1ijXqmsNF_QwTSfhsPtmAJZCJef1LhynJ7aamawhh0qpqY-9RpyH1W9bK/exec";
 const TMDB_AUTH = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMTdlOTMxYjY4MjM1NjBkNGNmMjc0YzhkZmZhMTc4YSIsIm5iZiI6MTc1MDE5MTEwOC40MjcsInN1YiI6IjY4NTFjYzA0YWViYTJkMmZlNGIzMTU0ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Q-mtZuNx4NSIMwB1aO6vwA3MmzkiBOTALyFBLg8cwsc';
@@ -18,7 +18,7 @@ export default function Leaderboard() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        document.title = "Fantasy Movie League - Leaderboard";
+        document.title = "Movie Boxing - Leaderboard";
     }, []);
 
     useEffect(() => {
@@ -77,32 +77,27 @@ export default function Leaderboard() {
     }, []);
 
     if (loading) return (
-        <div className="min-h-screen bg-black text-white flex items-center justify-center font-black italic tracking-widest animate-pulse">
-            SYNCING LIVE SCORES...
+        <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
+            <MovieHeader />
+            <div className="bg-black text-white flex items-center justify-center font-black italic tracking-widest animate-pulse">
+                SYNCING LIVE SCORES...
+            </div>
         </div>
+
     );
 
     return (
         <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
             <div className="max-w-4xl mx-auto">
-                <header className="text-center mb-16">
-                    <h1 className="text-6xl font-black italic tracking-tighter mb-4">DRAFT BOARD</h1>
-                    <div className="flex items-center justify-center gap-4 text-neutral-500 font-bold text-[12px] tracking-[0.2em] uppercase">
-                        <Link href="/movies" className="text-blue-500 hover:text-blue-400 transition-colors">Home</Link>
-                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
-                        <Link href="/movies/leaderboard" className="text-blue-500 hover:text-blue-400 transition-colors">Leaderboard</Link>
-                        <span className="w-1 h-1 bg-neutral-700 rounded-full"></span>
-                        <Link href="/movies/release-order" className="text-blue-500 hover:text-blue-400 transition-colors">Release Order</Link>
-                    </div>
-                </header>
+                <MovieHeader />
 
                 <div className="space-y-6">
                     {rankings.map((player, index) => (
                         <div
                             key={player.name}
                             className={`relative group rounded-3xl border-2 transition-all duration-300 ${index === 0
-                                    ? 'bg-white text-black border-white scale-[1.02] shadow-[0_20px_50px_rgba(255,255,255,0.1)]'
-                                    : 'bg-neutral-900 text-white border-neutral-800'
+                                ? 'bg-white text-black border-white scale-[1.02] shadow-[0_20px_50px_rgba(255,255,255,0.1)]'
+                                : 'bg-neutral-900 text-white border-neutral-800'
                                 }`}
                         >
                             <div className="p-6 md:p-8 flex items-center justify-between">
