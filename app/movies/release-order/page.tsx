@@ -20,7 +20,7 @@ interface ScheduledMovie {
 export default function ReleaseOrder() {
     const [schedule, setSchedule] = useState<ScheduledMovie[]>([]);
     const [loading, setLoading] = useState(true);
-    const [sortBy, setSortBy] = useState<'us'|'intl'>('intl');
+    const [sortBy, setSortBy] = useState<'us' | 'intl'>('intl');
 
     useEffect(() => {
         document.title = "Movie Boxing - Release Order";
@@ -117,85 +117,96 @@ export default function ReleaseOrder() {
     }, [schedule, sortBy]);
 
     if (loading) return (
-        <div  className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
+        <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
             <MovieHeader />
             <div className="bg-black text-white flex items-center justify-center font-black italic animate-pulse">LOADING CALENDAR...</div>
         </div>
-        
     );
 
     return (
         <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
             <div className="max-w-4xl mx-auto">
                 <MovieHeader />
-                <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as 'us' | 'intl')}
-                    className="ml-4 mb-8 w-50p p-2 bg-neutral-800 border border-neutral-700 rounded-lg text-m font-black uppercase italic tracking-tight"
-                >
-                    <option value="us">Sort by Release Date (US)</option>
-                    <option value="intl">Sort by Release Date (INTL)</option>
-                </select>
-                <div className="relative border-l-2 border-neutral-900 ml-12 md:ml-0">
-                    {sortedSchedule.map((movie, idx) => {
-                        const isReleased = movie.usReleaseDate <= today || movie.internationalReleaseDate <= today;
+                <div className="flex items-center justify-left mb-4">
+                    <select
+                        value={sortBy}
+                        onChange={(e) => setSortBy(e.target.value as 'us' | 'intl')}
+                        className="ml-1 w-20p p-2 bg-neutral-800 border border-neutral-700 rounded-lg text-xs font-black uppercase italic tracking-tight"
+                    >
+                        <option value="us">Sort by US Release</option>
+                        <option value="intl">Sort by Intl Release</option>
+                    </select>
+                    <a href="#today" className="ml-3 w-50p py-2 px-3 bg-neutral-800 border border-neutral-700 rounded-lg text-xs font-black uppercase italic tracking-tight">
+                        Jump To Today
+                    </a>
+                </div>
 
-                        return (
-                            <div key={`${movie.id}-${idx}`} className="mb-10 ml-8 relative">
-                                {/* Timeline Dot */}
-                                <div className={`absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-black transition-colors ${isReleased ? 'bg-green-500' : 'bg-blue-600'}`} />
+                <div className="relative border-l-2 border-neutral-900 ml-3md:ml-12 md:ml-0">
+                    {(() => {
+                        const firstFutureMovieIndex = sortedSchedule.findIndex(movie => {
+                            const isReleased = movie.usReleaseDate <= today || movie.internationalReleaseDate <= today;
+                            return !isReleased;
+                        });
+                        return sortedSchedule.map((movie, idx) => {
+                            const isReleased = movie.usReleaseDate <= today || movie.internationalReleaseDate <= today;
 
-                                <div className={`p-5 rounded-2xl border transition-all ${isReleased ? 'bg-neutral-900/40 border-neutral-800 opacity-60' : 'bg-neutral-900 border-neutral-700 shadow-xl'}`}>
-                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                        <div>
-                                            <div className='flex flex-row'>
-                                                <p className="text-blue-500 font-black text-[10px] tracking-widest uppercase mb-1 mr-2">
-                                                    INTL: {(() => {
-                                                        const d = new Date(movie.internationalReleaseDate);
-                                                        return d.toLocaleDateString('en-US', {
-                                                            month: 'long',
-                                                            day: 'numeric',
-                                                            year: 'numeric',
-                                                            timeZone: 'UTC' // <--- This forces the browser to ignore your local time
-                                                        });
-                                                    })()}
-                                                </p>
-                                                <p className="text-gray-400 font-black text-[10px] tracking-widest uppercase mb-1">
-                                                    US: {(() => {
-                                                        const d = new Date(movie.usReleaseDate);
-                                                        return d.toLocaleDateString('en-US', {
-                                                            month: 'long',
-                                                            day: 'numeric',
-                                                            year: 'numeric',
-                                                            timeZone: 'UTC' // <--- This forces the browser to ignore your local time
-                                                        });
-                                                    })()}
-                                                </p>
-                                            </div>
-                                            <h2 className="text-xl font-black uppercase italic tracking-tight">{movie.title}</h2>
-                                            <div className="flex items-center gap-2 mt-2">
-                                                <span className="text-[10px] font-bold bg-white text-black px-2 py-0.5 rounded uppercase">
-                                                    {movie.owner}
-                                                </span>
-                                                {movie.isBench && (
-                                                    <span className="text-[10px] font-bold border border-neutral-700 text-neutral-500 px-2 py-0.5 rounded uppercase">
-                                                        Bench
+                            return (
+                                <div key={`${movie.id}-${idx}`} className="mb-10 ml-8 relative scroll-mt-60" id={idx === firstFutureMovieIndex ? 'today' : undefined}>
+                                    {/* Timeline Dot */}
+                                    <div className={`absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-black transition-colors ${isReleased ? 'bg-green-500' : 'bg-blue-600'}`} />
+
+                                    <div className={`p-5 rounded-2xl border transition-all ${isReleased ? 'bg-neutral-900/40 border-neutral-800 opacity-60' : 'bg-neutral-900 border-neutral-700 shadow-xl'}`}>
+                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                            <div>
+                                                <div className='flex flex-row'>
+                                                    <p className="text-blue-500 font-black text-[10px] tracking-widest uppercase mb-1 mr-2">
+                                                        INTL: {(() => {
+                                                            const d = new Date(movie.internationalReleaseDate);
+                                                            return d.toLocaleDateString('en-US', {
+                                                                month: 'long',
+                                                                day: 'numeric',
+                                                                year: 'numeric',
+                                                                timeZone: 'UTC' // <--- This forces the browser to ignore your local time
+                                                            });
+                                                        })()}
+                                                    </p>
+                                                    <p className="text-gray-400 font-black text-[10px] tracking-widest uppercase mb-1">
+                                                        US: {(() => {
+                                                            const d = new Date(movie.usReleaseDate);
+                                                            return d.toLocaleDateString('en-US', {
+                                                                month: 'long',
+                                                                day: 'numeric',
+                                                                year: 'numeric',
+                                                                timeZone: 'UTC' // <--- This forces the browser to ignore your local time
+                                                            });
+                                                        })()}
+                                                    </p>
+                                                </div>
+                                                <h2 className="text-xl font-black uppercase italic tracking-tight">{movie.title}</h2>
+                                                <div className="flex items-center gap-2 mt-2">
+                                                    <span className="text-[10px] font-bold bg-white text-black px-2 py-0.5 rounded uppercase">
+                                                        {movie.owner}
                                                     </span>
-                                                )}
+                                                    {movie.isBench && (
+                                                        <span className="text-[10px] font-bold border border-neutral-700 text-neutral-500 px-2 py-0.5 rounded uppercase">
+                                                            Bench
+                                                        </span>
+                                                    )}
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div className="text-right md:border-l md:border-neutral-800 md:pl-8">
-                                            <p className="text-2xl font-mono font-bold tracking-tighter">
-                                                {formatCurrency(movie.revenue)}
-                                            </p>
-                                            <p className="text-[9px] font-bold text-neutral-500 uppercase">Revenue Collected</p>
+                                            <div className="text-right md:border-l md:border-neutral-800 md:pl-8">
+                                                <p className="text-2xl font-mono font-bold tracking-tighter">
+                                                    {formatCurrency(movie.revenue)}
+                                                </p>
+                                                <p className="text-[9px] font-bold text-neutral-500 uppercase">Revenue Collected</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        );
-                    })}
+                            );
+                        });
+                    })()}
                 </div>
             </div>
         </div>

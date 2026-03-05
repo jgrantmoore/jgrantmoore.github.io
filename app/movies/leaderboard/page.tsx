@@ -63,7 +63,12 @@ export default function Leaderboard() {
                     };
                 });
 
-                calculatedRanks.sort((a, b) => b.totalRevenue - a.totalRevenue);
+                calculatedRanks.sort((a, b) => {
+                    if (b.totalRevenue !== a.totalRevenue) {
+                        return b.totalRevenue - a.totalRevenue;
+                    }
+                    return b.releasedCount - a.releasedCount;
+                });
                 setRankings(calculatedRanks);
 
             } catch (err) {
@@ -80,7 +85,7 @@ export default function Leaderboard() {
         <div className="min-h-screen bg-black text-white p-4 md:p-12 font-sans">
             <MovieHeader />
             <div className="bg-black text-white flex items-center justify-center font-black italic tracking-widest animate-pulse">
-                SYNCING LIVE SCORES...
+                UPDATING LEADERBOARD...
             </div>
         </div>
 
