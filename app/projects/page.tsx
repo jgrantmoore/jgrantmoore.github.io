@@ -10,6 +10,7 @@ import goodgreek from '@/public/images/Projects/goodgreek.jpg';
 import goodgreekregister from '@/public/images/Projects/goodgreekregister.jpg'
 import financefriend from '@/public/images/Projects/financefriend.jpg';
 import thor from '@/public/images/Projects/thor.png';
+import MovieBoxing from '@/public/images/Projects/movieboxing.png';
 import Project from '@/components/Project';
 import TopBar from '@/components/TopBar';
 import { useEffect } from 'react';
@@ -26,6 +27,13 @@ export default function Projects() {
                 <h1 id="projectHeader">Personal Projects</h1>
                 <p>Click on any card to see the source code</p>
                 <div className="projects-container">
+                    <Project
+                        title="MovieBoxing"
+                        image={MovieBoxing}
+                        alt="Screenshot of the landing page of MovieBoxing"
+                        description="MovieBoxing is a fantasy movie league where players draft movies to compete for the highest box office revenue. Hosted using Azure Cloud and Built with Next.js and TypeScript."
+                        url="https://movieboxing.com"
+                    />
                     <Project
                         title="Finance Friend"
                         image={thor}
